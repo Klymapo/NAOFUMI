@@ -2812,3 +2812,23 @@ h1,h2,h3,strong,.grow { overflow-wrap:anywhere; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   ::view-transition-old(root), ::view-transition-new(root) { animation: none !important; }
 }
+
+/* ---- Ilustraciones (Argos, 2026-10-20) ---- */
+.journey-banner.hero-guild { background: #f6eedb; color: var(--pine-deep); border-color: var(--border); }
+.hero-guild .journey-art { position: absolute; inset: 0; width: 100%; height: 100%; mask-image: none; opacity: 1; }
+.hero-guild .journey-art img { width: 100%; height: 100%; object-fit: cover; object-position: right center; display: block; }
+.hero-guild .journey-copy { width: 46%; }
+.hero-guild .hero-kicker { color: var(--brass); }
+.hero-guild .journey-copy h2 { color: var(--pine-deep); }
+.hero-guild .journey-copy p { color: #4c5a4f; }
+@media (max-width: 700px) {
+  .journey-banner.hero-guild { display: flex; flex-direction: column; min-height: 0; }
+  .hero-guild .journey-art { position: relative; order: -1; height: 170px; }
+  .hero-guild .journey-art img { object-position: 60% 30%; }
+  .hero-guild .journey-copy { width: auto; padding: 18px 20px 22px; }
+}
+.radar-head { align-items: center; }
+.radar-art { width: 220px; height: auto; order: 2; margin-left: auto; filter: drop-shadow(0 6px 10px #24433022); }
+.radar-head > div { flex: 1 1 220px; }
+@media (max-width: 700px) { .radar-art { order: -1; width: 100%; max-width: 300px; margin: 0 auto; } }
+.empty-art { width: 150px; height: auto; margin: 0 auto 6px; display: block; opacity: .95; }

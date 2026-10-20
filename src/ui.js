@@ -24,7 +24,7 @@ export const iconButton = (label, action, i, extra = '') => `<button class="icon
 export const sectionHead = (title, link = '', label = 'Ver todo') => `<div class="section-head"><h2>${h(title)}</h2>${link ? `<a class="text-link" href="${h(link)}">${h(label)}${icon('arrow')}</a>` : ''}</div>`;
 export const pageHead = (eyebrow, title, description, actions = '') => `<header class="page-head"><div><p class="eyebrow">${h(eyebrow)}</p><h1 tabindex="-1">${h(title)}</h1><p class="lede">${h(description)}</p></div><div class="page-actions">${actions}</div></header>`;
 export const notice = (message, tone = 'info', title = '') => `<div class="notice ${tone}">${icon(tone === 'warning' ? 'alert' : 'info')}<div>${title ? `<strong>${h(title)}</strong>` : ''}<p>${h(message)}</p></div></div>`;
-export const empty = (title, body, action = '', label = '', i = 'board') => `<div class="empty-state"><span class="empty-icon">${icon(i)}</span><h2>${h(title)}</h2><p>${h(body)}</p>${action ? button(label, action, 'plus') : ''}</div>`;
+export const empty = (title, body, action = '', label = '', i = 'board') => `<div class="empty-state"><img class="empty-art" src="./assets/img/vacio.webp" alt="" width="180" height="178" loading="lazy" decoding="async"><h2>${h(title)}</h2><p>${h(body)}</p>${action ? button(label, action, 'plus') : ''}</div>`;
 export const amountValue = n => n === null || n === undefined ? '' : n / 100;
 let fieldSequence = 0;
 export function field(label,name,value='',{type='text',required=false,placeholder='',help='',max=200}={}) {
