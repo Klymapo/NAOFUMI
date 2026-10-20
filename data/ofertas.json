@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generado": "2026-10-20T17:43:37.394449+00:00",
+ "generado": "2026-10-20T17:46:53.523309+00:00",
  "ventana_horas": 72,
  "fuentes": [
   {
@@ -16,7 +16,7 @@
    "estado": "ok",
    "recibidas": 99,
    "error": null,
-   "segundos": 0.5,
+   "segundos": 0.7,
    "aceptadas": 0
   },
   {
@@ -24,7 +24,7 @@
    "estado": "ok",
    "recibidas": 100,
    "error": null,
-   "segundos": 0.4,
+   "segundos": 0.5,
    "aceptadas": 0
   },
   {
@@ -32,7 +32,7 @@
    "estado": "ok",
    "recibidas": 129,
    "error": null,
-   "segundos": 0.9,
+   "segundos": 1.1,
    "aceptadas": 1
   },
   {
@@ -40,24 +40,8 @@
    "estado": "ok",
    "recibidas": 220,
    "error": null,
-   "segundos": 3.2,
+   "segundos": 3.3,
    "aceptadas": 59
-  },
-  {
-   "fuente": "hn",
-   "estado": "ok",
-   "recibidas": 0,
-   "error": null,
-   "segundos": 1.5,
-   "aceptadas": 0
-  },
-  {
-   "fuente": "reddit",
-   "estado": "falló",
-   "recibidas": 0,
-   "error": "HTTPError: HTTP Error 403: Blocked",
-   "segundos": 0.0,
-   "aceptadas": 0
   }
  ],
  "descartes": {
@@ -65,7 +49,7 @@
   "más de 72 h": 129,
   "no encaja con el catálogo": 94,
   "empleo, no freelance": 24,
-  "trabajo local, no remoto": 8,
+  "trabajo local, no remoto": 7,
   "no es 100 % remoto": 6,
   "idioma fuera de español/inglés": 4,
   "lista negra (no pay)": 3,
@@ -115,9 +99,9 @@
     "Presupuesto publicado",
     "Valora español"
    ],
-   "edad_horas": 0.9,
+   "edad_horas": 1.0,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -161,7 +145,7 @@
    ],
    "edad_horas": 17.8,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -206,9 +190,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto bajo"
    ],
-   "edad_horas": 11.6,
+   "edad_horas": 11.7,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -250,9 +234,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 4.2,
+   "edad_horas": 4.3,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -299,7 +283,7 @@
    ],
    "edad_horas": 6.4,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -337,9 +321,9 @@
     "Encaja con Automatización Python: automate, automation",
     "Presupuesto publicado"
    ],
-   "edad_horas": 24.0,
+   "edad_horas": 24.1,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -379,9 +363,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 3.2,
+   "edad_horas": 3.3,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -422,9 +406,9 @@
     "Encaja con Datos y BI: data analysis, metrics, sql, tableau",
     "Presupuesto publicado"
    ],
-   "edad_horas": 26.6,
+   "edad_horas": 26.7,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -468,7 +452,7 @@
    ],
    "edad_horas": 11.7,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -510,7 +494,7 @@
    ],
    "edad_horas": 0.3,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -554,7 +538,7 @@
    ],
    "edad_horas": 1.8,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -594,9 +578,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 1.5,
+   "edad_horas": 1.6,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -637,7 +621,7 @@
    ],
    "edad_horas": 0.1,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -678,7 +662,7 @@
    ],
    "edad_horas": 2.9,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -719,7 +703,7 @@
    ],
    "edad_horas": 9.5,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -762,9 +746,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto bajo"
    ],
-   "edad_horas": 10.7,
+   "edad_horas": 10.8,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -805,7 +789,7 @@
    ],
    "edad_horas": 11.3,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -844,9 +828,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 3.6,
+   "edad_horas": 3.7,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -887,7 +871,7 @@
    ],
    "edad_horas": 7.5,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -931,7 +915,7 @@
    ],
    "edad_horas": 0.7,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -971,9 +955,9 @@
     "Presupuesto publicado",
     "Valora español"
    ],
-   "edad_horas": 2.9,
+   "edad_horas": 3.0,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1014,9 +998,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 0.9,
+   "edad_horas": 1.0,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1059,7 +1043,7 @@
    ],
    "edad_horas": 1.1,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1100,7 +1084,7 @@
    ],
    "edad_horas": 6.0,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1139,9 +1123,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 1.5,
+   "edad_horas": 1.6,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1180,9 +1164,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 3.3,
+   "edad_horas": 3.4,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1224,9 +1208,9 @@
     "Presupuesto publicado",
     "Valora español"
    ],
-   "edad_horas": 2.8,
+   "edad_horas": 2.9,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1264,9 +1248,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 0.7,
+   "edad_horas": 0.8,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1309,9 +1293,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 14.3,
+   "edad_horas": 14.4,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1353,7 +1337,7 @@
    ],
    "edad_horas": 0.8,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1393,7 +1377,7 @@
    ],
    "edad_horas": 11.6,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1435,7 +1419,7 @@
    ],
    "edad_horas": 22.8,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1478,7 +1462,7 @@
    ],
    "edad_horas": 4.6,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1520,7 +1504,7 @@
    ],
    "edad_horas": 9.5,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1561,9 +1545,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 0.6,
+   "edad_horas": 0.7,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1603,9 +1587,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 0.0,
+   "edad_horas": 0.1,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1645,9 +1629,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 6.6,
+   "edad_horas": 6.7,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1689,7 +1673,7 @@
    ],
    "edad_horas": 1.2,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1729,9 +1713,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 0.6,
+   "edad_horas": 0.7,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1773,7 +1757,7 @@
    ],
    "edad_horas": 21.0,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1815,7 +1799,7 @@
    ],
    "edad_horas": 4.0,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1856,6 +1840,47 @@
    ],
    "edad_horas": 5.0,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
+   "nueva": false
+  },
+  {
+   "fuente": "freelancer",
+   "fuente_nombre": "Freelancer.com",
+   "fuente_url": "https://www.freelancer.com",
+   "id_externo": "40777146",
+   "url": "https://www.freelancer.com/projects/web-development/Sales-focused-Web-Application",
+   "titulo": "Sales-focused Web Application Development",
+   "empresa": "",
+   "descripcion": "I can help you design and develop a sales-focused application that makes it easier for customers to browse products, complete purchases, and receive promotional offers. My recommendation is to begin with a responsive web application or Progressive Web App (PWA), depending on your business requirements. This approach can provide a mobile-friendly experience while keeping initial development costs manageable. Proposed features include: Product catalog with search and categories Shopping cart and streamlined checkout Payment gateway integration Customer accounts and order management Promotional o",
+   "publicado": "2026-10-20T05:31:13+00:00",
+   "tipo": "freelance fixed",
+   "ubicacion": "remote",
+   "idioma": "en",
+   "presupuesto": {
+    "min": 250.0,
+    "max": 750.0,
+    "moneda": "USD",
+    "periodo": "proyecto",
+    "usd_min": 250.0,
+    "usd_max": 750.0
+   },
+   "local": false,
+   "id": "fdb3f1d74a4c2072",
+   "lineas": [
+    "Datos y BI"
+   ],
+   "categoria_app": "Datos y Excel",
+   "coincidencias": [
+    "dashboard",
+    "reporting"
+   ],
+   "puntaje": 11.0,
+   "motivos": [
+    "Encaja con Datos y BI: dashboard, reporting",
+    "Publicada hace menos de 24 h",
+    "Presupuesto publicado"
+   ],
+   "edad_horas": 12.3,
+   "descubierto": "2026-10-20T17:46:53.523309+00:00",
    "nueva": true
   },
   {
@@ -1895,9 +1920,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 1.8,
+   "edad_horas": 1.9,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "jobicy",
@@ -1930,7 +1955,7 @@
    ],
    "edad_horas": 38.9,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -1972,7 +1997,7 @@
    ],
    "edad_horas": 3.1,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -2014,7 +2039,7 @@
    ],
    "edad_horas": 3.2,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -2054,9 +2079,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 4.3,
+   "edad_horas": 4.4,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -2096,9 +2121,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 1.3,
+   "edad_horas": 1.4,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -2137,9 +2162,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 1.4,
+   "edad_horas": 1.5,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -2180,7 +2205,7 @@
    ],
    "edad_horas": 6.6,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -2219,9 +2244,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 9.5,
+   "edad_horas": 9.6,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -2262,7 +2287,7 @@
    ],
    "edad_horas": 0.7,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -2303,7 +2328,7 @@
    ],
    "edad_horas": 1.1,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -2344,7 +2369,7 @@
    ],
    "edad_horas": 5.9,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -2383,9 +2408,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 6.7,
+   "edad_horas": 6.8,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -2426,7 +2451,7 @@
    ],
    "edad_horas": 8.1,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -2465,9 +2490,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 9.7,
+   "edad_horas": 9.8,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -2506,9 +2531,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 11.9,
+   "edad_horas": 12.0,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -2547,50 +2572,9 @@
     "Publicada hace menos de 24 h",
     "Presupuesto publicado"
    ],
-   "edad_horas": 5.0,
+   "edad_horas": 5.1,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
-  },
-  {
-   "fuente": "freelancer",
-   "fuente_nombre": "Freelancer.com",
-   "fuente_url": "https://www.freelancer.com",
-   "id_externo": "40777941",
-   "url": "https://www.freelancer.com/projects/social-media-management/Google-And-Social-Media-Management",
-   "titulo": "Google And Social Media Management",
-   "empresa": "",
-   "descripcion": "My business already shows up on Google My Business and has active Facebook and Instagram pages. I now want these channels to work together to lift local brand awareness and keep nearby customers engaged. The job revolves around three pillars. First, keep the Google My Business profile fresh: post updates, add photos, monitor insights and answer every review or question quickly so our listing stays trusted and visible. Second, shape a consistent voice on Facebook and Instagram with creative posts that highlight offers, events and behind-the-scenes moments that resonate with people in the area. ",
-   "publicado": "2026-10-20T14:28:44+00:00",
-   "tipo": "freelance fixed",
-   "ubicacion": "remote",
-   "idioma": "en",
-   "presupuesto": {
-    "min": 250.0,
-    "max": 750.0,
-    "moneda": "USD",
-    "periodo": "proyecto",
-    "usd_min": 250.0,
-    "usd_max": 750.0
-   },
-   "local": false,
-   "id": "62f9c84fbf3581a0",
-   "lineas": [
-    "Datos y BI"
-   ],
-   "categoria_app": "Datos y Excel",
-   "coincidencias": [
-    "metrics",
-    "reporting"
-   ],
-   "puntaje": 9.5,
-   "motivos": [
-    "Encaja con Datos y BI: metrics, reporting",
-    "Publicada hace menos de 24 h",
-    "Presupuesto publicado"
-   ],
-   "edad_horas": 3.2,
-   "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": true
+   "nueva": false
   }
  ],
  "aviso": "Ofertas públicas filtradas automáticamente. Revisa la fuente original antes de postular; ninguna se ha verificado manualmente."
