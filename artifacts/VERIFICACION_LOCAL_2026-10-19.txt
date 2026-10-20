@@ -1,0 +1,40 @@
+
+> naofumi-local@0.1.0 test
+> node tests/domain.test.mjs && node tests/integrations.test.mjs
+
+✔ ingreso manual desconocido nunca verifica ni inventa presupuesto (8.95523ms)
+✔ archivo conserva y restauración devuelve el expediente sin verificarlo (0.547647ms)
+✔ rechaza título vacío, URL ejecutable e importe inválido (0.626907ms)
+✔ cobros reales independientes del estado de trabajo y separados por moneda (2.003716ms)
+✔ editar propuesta crea versión y nunca envía (0.272632ms)
+✔ datos importados inválidos no se aceptan (0.173492ms)
+✔ espacio personal y ejemplos no se mezclan y persisten al recargar (4.420704ms)
+✔ cuota de almacenamiento no confirma cambios ni pierde datos previos (1.463259ms)
+✔ una pestaña desactualizada no sobrescribe registros de otra pestaña (2.276757ms)
+✔ importación vacía e inválida conserva estado; copia válida es idempotente (2.014511ms)
+✔ respaldo rechaza HTML en versiones y fechas internas inválidas (0.491692ms)
+✔ importación conserva perfil existente sin nombre y rechaza perfil distinto (0.21205ms)
+✔ corregir capacidades, señales y acciones conserva versiones anteriores (0.515408ms)
+ℹ tests 13
+ℹ suites 0
+ℹ pass 13
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 30.210731
+✔ todos los puertos remotos rechazan sin realizar solicitudes (1.213763ms)
+✔ el modo remoto no puede habilitarse desde preferencias (0.169796ms)
+ℹ tests 2
+ℹ suites 0
+ℹ pass 2
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 7.015352
+
+> naofumi-local@0.1.0 check
+> node scripts/check.mjs
+
+PASS: 17 módulos válidos y recursos locales presentes.

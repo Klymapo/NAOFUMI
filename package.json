@@ -1,0 +1,13 @@
+{
+  "name": "naofumi-local",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Molde local de NAOFUMI. Sin conexiones externas.",
+  "scripts": {
+    "start": "node server.mjs",
+    "test": "node tests/domain.test.mjs && node tests/integrations.test.mjs",
+    "check": "node scripts/check.mjs"
+  },
+  "engines": { "node": ">=22" }
+}

@@ -1,0 +1,36 @@
+import assert from 'node:assert/strict';
+const {chromium}=await import(process.env.PLAYWRIGHT_MODULE||'/opt/codex/cua_node/lib/node_modules/playwright/index.mjs');
+const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox']});
+const page=await browser.newPage({viewport:{width:390,height:844}});
+try {
+  await page.goto('http://127.0.0.1:4173/#/profile');
+  await page.getByLabel('Cómo te llamamos').fill('Borrador sin guardar');
+  await page.getByRole('button',{name:'Añadir capacidad',exact:true}).click();
+  await page.getByRole('dialog').getByRole('textbox',{name:/^Capacidad/}).fill('Redacción');
+  await page.getByRole('dialog').getByRole('button',{name:'Guardar capacidad',exact:true}).click();
+  assert.equal(await page.getByLabel('Cómo te llamamos').inputValue(),'Borrador sin guardar');
+  const leaveHandled = new Promise(resolve => page.once('dialog', async d=>{ await d.dismiss(); resolve(); }));
+  await page.locator('.mobile-brand').click();
+  await leaveHandled;
+  await page.waitForURL('**/#/profile');
+  assert.match(page.url(),/#\/profile$/);
+  await page.getByRole('button',{name:'Guardar perfil',exact:true}).click();
+  const before=page.url();await page.locator('.skip-link').focus();await page.keyboard.press('Enter');
+  assert.equal(page.url(),before);
+  assert.equal(await page.evaluate(()=>document.activeElement.id),'main');
+  await page.getByRole('button',{name:'Añadir capacidad',exact:true}).click();
+  await page.getByRole('dialog').getByRole('textbox',{name:/^Capacidad/}).fill('Pendiente');
+  page.once('dialog', d=>d.dismiss());await page.keyboard.press('Escape');
+  assert.equal(await page.locator('dialog[open]').count(),1);
+  page.once('dialog', d=>d.accept());await page.keyboard.press('Escape');
+  assert.equal(await page.locator('dialog[open]').count(),0);
+  await page.goto('http://127.0.0.1:4173/#/board');
+  await page.locator('.opportunity-card h3 a').first().click();
+  await page.getByRole('tab',{name:'Mis notas',exact:true}).click();
+  await page.getByLabel('Notas privadas').fill('Nota aún sin guardar');
+  page.once('dialog',d=>d.dismiss());
+  await page.getByRole('tab',{name:'Resumen',exact:true}).click();
+  assert.equal(await page.getByLabel('Notas privadas').inputValue(),'Nota aún sin guardar');
+  await page.getByRole('button',{name:'Guardar notas',exact:true}).click();
+  console.log('PASS: borrador conservado al guardar modal, advertencia de salida, salto al contenido y Escape sin pérdida silenciosa.');
+} finally {await browser.close();}

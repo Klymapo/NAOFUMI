@@ -1,0 +1,62 @@
+import { h, icon, badge, button, pageHead, sectionHead, notice, empty, field, area, select, check } from '../ui.js';
+export function profile(s, demo) {
+  const p = s.profile;
+  return `${pageHead('LO QUE SABES HACER', 'Tu perfil de aventurero', 'Tus capacidades se cuentan con evidencia, no con rangos.', `${badge(demo ? 'Perfil del espacio de ejemplo' : 'Perfil personal', 'neutral', 'user')}<a class="btn secondary" href="#/settings">${icon('settings')}Mi espacio</a>`)}${notice('Completa lo que puedas demostrar. Una capacidad declarada no se considera verificada.')}<div class="detail-layout"><section class="panel padded"><h2>Tu presentación</h2><form data-form="profile">${field('Cómo te llamamos', 'name', p.name, {
+    placeholder: 'Tu nombre o nombre profesional',
+    max: 100
+  })}${area('Acerca de ti', 'bio', p.bio)}${area('Servicios que puedes ofrecer', 'services', p.services, false, 'Describe alcance, herramientas y límites.')}<div class="form-grid">${field('Idiomas', 'languages', p.languages, {
+    placeholder: 'Idioma y nivel declarado'
+  })}${field('Disponibilidad', 'availability', p.availability, {
+    placeholder: 'Ej. horas o días disponibles',
+    max: 100
+  })}</div>${field('Saldo de connects declarado', 'connects', p.connects ?? '', {
+    type: 'number',
+    help: 'Opcional. No se consulta Upwork ni se compra o gasta nada.'
+  })}<div class="form-error" role="alert"></div>${button('Guardar perfil', 'submit', 'check')}</form></section><aside><section class="panel padded"><h2>Capacidades y evidencias</h2><p class="small muted-text">Vincula cada capacidad con un ejemplo concreto.</p>${p.skills.length ? p.skills.map(k => `<div class="skill-card"><div class="skill-heading"><strong>${h(k.name)}</strong>${button('Editar capacidad','edit-skill','edit','text',`data-id="${h(k.id)}"`)}</div>${badge('Declarada', 'neutral')}<p>${h(k.evidence || 'Evidencia pendiente')}</p></div>`).join('') : '<p class="profile-placeholder">Tu catálogo empieza con lo que ya sabes hacer.</p>'}${button('Añadir capacidad', 'new-skill', 'plus', 'secondary')}</section><div class="journal panel section-space"><span class="journal-star">✦</span><h3>Que tu trabajo<br>hable por ti.</h3><p>No necesitas llenar todos los campos hoy. Empieza con un servicio y una evidencia.</p></div></aside></div>`;
+}
+export function settings(s, demo) {
+  return `${pageHead('HAZLO TUYO', 'Tu espacio, a tu manera', 'Preferencias, copias locales y conexiones bajo tu control.')}<div class="settings-grid"><section class="panel padded"><div class="section-icon">${icon('layers')}</div><h2>Dos espacios. Sin mezclas.</h2><p>Explora el molde con datos ficticios o empieza con tu propio tablón vacío.</p><div class="space-choice ${demo ? 'chosen' : ''}"><div><strong>Ejemplos</strong><p>Escenarios ficticios para probar el recorrido.</p></div>${demo ? badge('Actual', 'green') : button('Explorar ejemplos', 'space-demo', '', 'secondary')}</div><div class="space-choice ${!demo ? 'chosen' : ''}"><div><strong>Mi espacio</strong><p>Tus registros locales, sin datos precargados.</p></div>${!demo ? badge('Actual', 'green') : button('Usar mi espacio', 'space-personal', '', 'secondary')}</div><p class="small muted-text">Cambiar de espacio conserva todo en el anterior.</p></section><section class="panel padded"><div class="section-icon">${icon('settings')}</div><h2>Una interfaz a tu ritmo</h2><form data-form="preferences">${select('Densidad de las listas', 'density', [['comfortable', 'Cómoda'], ['compact', 'Compacta']], s.preferences.density)}${check('Reducir movimiento y transiciones', 'reduceMotion', s.preferences.reduceMotion)}${check('Mostrar notificaciones dentro de la app', 'internalNotifications', s.preferences.internalNotifications)}<div class="form-error" role="alert"></div>${button('Guardar preferencias', 'submit', 'check')}</form></section><section class="panel padded"><div class="section-icon">${icon('download')}</div><h2>Una copia en tus manos</h2><p>Exporta el espacio actual como JSON. Guarda la copia en un lugar privado.</p><div class="flex-actions">${button('Exportar copia', 'export', 'download', 'secondary')}${button('Importar copia', 'import', 'upload', 'text')}</div><input type="file" id="import-file" accept="application/json,.json" hidden><p class="small muted-text">Importar añade registros sin reemplazar versiones distintas. Las copias de Ejemplos solo se importan en Ejemplos.</p></section><section class="panel padded"><div class="section-icon">${icon('lock')}</div><h2>Local por decisión</h2><p>Sin cuentas conectadas, rastreo, correo, push ni servicios externos. No hay autenticación de producción.</p><a href="#/sources" class="text-link">Ver fuentes preparadas ${icon('arrow')}</a><a href="#/states" class="text-link">Explorar estados de interfaz ${icon('arrow')}</a><a href="#/archive" class="text-link">Abrir archivo ${icon('arrow')}</a><a href="#/help" class="text-link">Guía del gremio ${icon('arrow')}</a></section></div>${notice('Los registros viven en este navegador. No guardes contraseñas ni datos sensibles. El modo privado o limpiar los datos del navegador puede hacerte perder el contenido; exporta una copia.', 'warning')}`;
+}
+export function sources() {
+  return `${pageHead('LAS PUERTAS DEL GREMIO', 'Fuentes y conexiones', 'Preparadas para el futuro. Desactivadas por ahora.', badge('0 conexiones activas', 'neutral', 'lock'))}${notice('Ninguna fuente se consulta desde esta versión. Guardar un enlace no provoca una conexión ni verifica su contenido.')}<div class="card-grid">${[['Upwork', 'Encargos freelance', 'Requiere acceso propio aprobado y condiciones verificadas.'], ['Comunidades', 'Conversaciones con contexto', 'Permisos específicos por comunidad y canal. Sin cuentas personales automatizadas.'], ['Feeds y tablones', 'Descubrir publicaciones', 'Revisar licencia, atribución, frecuencia y conservación antes de integrar.'], ['Ingreso manual', 'Tu punto de partida', 'Enlaces y texto aportados por ti. Siempre pendientes de revisión.']].map(([name, title, body], i) => `<article class="panel padded source-card"><span class="source-monogram">${i === 3 ? icon('edit') : name.charAt(0)}</span>${badge(i === 3 ? 'Disponible localmente' : 'Sin conectar', i === 3 ? 'green' : 'neutral')}<h2>${name}</h2><strong>${title}</strong><p>${body}</p><div class="source-status"><span>Última consulta</span><strong>${i === 3 ? 'No aplica' : 'Nunca'}</strong></div>${i === 3 ? button('Añadir un encargo', 'new-opportunity', 'plus', 'secondary') : '<span class="small muted-text">Integración pendiente · no activable aquí</span>'}</article>`).join('')}</div>`;
+}
+export function states(ui) {
+  const values = [['ready', 'Listo'], ['loading', 'Carga'], ['empty', 'Vacío'], ['error', 'Error'], ['restricted', 'Acceso'], ['offline', 'Sin internet'], ['source', 'Fuente caída'], ['closed', 'Cerrada']];
+  let body = '';
+  switch (ui.previewState) {
+    case 'loading':
+      body = `<div class="skeleton-area" role="status" aria-label="Ejemplo de pantalla de carga"><p>Preparando el tablón…</p><div class="skeleton skeleton-title"></div><div class="skeleton"></div><div class="skeleton"></div><span class="sr-only">Simulación visual, no hay consultas en curso.</span></div>`;
+      break;
+    case 'empty':
+      body = empty('Todavía no hay encargos', 'Tu tablón crecerá contigo. Añade un primer encargo cuando quieras.');
+      break;
+    case 'error':
+      body = `<div class="empty-state"><span class="empty-icon error">${icon('alert')}</span><h2>No pudimos guardar este cambio</h2><p>Tus datos anteriores siguen intactos. Revisa el espacio del navegador e inténtalo de nuevo.</p>${button('Volver a intentar · ejemplo', 'preview-retry', 'refresh', 'secondary')}</div>`;
+      break;
+    case 'restricted':
+      body = empty('Esta fuente necesita permiso', 'Conserva el enlace y registra lo que sabes. No intentaremos eludir el acceso.', '', '', 'lock');
+      break;
+    case 'offline':
+      body = notice('No hay conexión a internet. Este molde sigue funcionando con su servidor local activo. Las conexiones externas permanecen desactivadas.', 'warning', 'Tu trabajo local puede continuar');
+      break;
+    case 'source':
+      body = notice('No se pudo consultar esta fuente. Un fallo no significa cero resultados. La última revisión se mostraría aquí cuando exista una conexión.', 'warning', 'Fuente no disponible · ejemplo');
+      break;
+    case 'closed':
+      body = empty('Este encargo ya cerró', 'Conserva el expediente y sus notas. No se presentará como una oportunidad vigente.', '', '', 'archive');
+      break;
+    default:
+      body = `<div class="empty-state"><span class="empty-icon">${icon('check')}</span><h2>Todo listo para tu siguiente paso</h2><p>Los estados de esta galería son ejemplos visuales. No cambian tus datos ni simulan integraciones reales.</p></div>`;
+  }
+  return `${pageHead('CADA ESTADO TAMBIÉN ES EXPERIENCIA', 'Un molde que sabe responder', 'Carga, errores y situaciones especiales, con un siguiente paso claro.', badge('Galería de estados', 'amber'))}<div class="state-pills">${values.map(([v, l]) => `<button class="chip ${ui.previewState === v ? 'selected' : ''}" data-action="preview-state" data-state="${v}" aria-pressed="${ui.previewState === v}">${l}</button>`).join('')}</div><div class="panel state-preview">${body}</div>${notice('Esta galería está separada del funcionamiento real. No genera errores, caídas o datos en tus expedientes.')}`;
+}
+export function archive(s) {
+  const rows = ['opportunities', 'prospects', 'proposals', 'works', 'actions'].flatMap(col => s[col].filter(r => r.archivedAt).map(r => ({
+    ...r,
+    collection: col
+  })));
+  return `${pageHead('CONSERVAR TAMBIÉN ES AVANZAR', 'Archivo', 'Todo lo que apartaste, disponible para volver cuando lo necesites.')}<div class="panel">${rows.map(r => `<div class="mission-row"><span class="category-icon">${icon('archive')}</span><div class="grow"><strong>${h(r.title)}</strong><span class="muted-text">Conservado con su historial</span></div>${button('Restaurar', 'restore', 'refresh', 'secondary', `data-id="${h(r.id)}" data-collection="${r.collection}"`)}</div>`).join('') || empty('Nada archivado todavía', 'Archivar aparta un registro sin borrarlo. Siempre podrás restaurarlo.', '', '', 'archive')}</div>`;
+}
+export function help() {
+  return `${pageHead('UN MAPA PARA EMPEZAR', 'Tu pequeño manual del gremio', 'Un recorrido simple, a tu ritmo.')}<div class="help-steps">${[['01', 'Prepara tu perfil', 'Describe servicios, capacidades, evidencias y límites. Todo comienza sin capacidades supuestas.', '#/profile'], ['02', 'Añade un encargo', 'Guarda una referencia o un texto. Lo desconocido se muestra como pendiente, nunca como verificado.', '#/board'], ['03', 'Decide tu siguiente paso', 'Guarda un encargo, redacta una propuesta o crea una acción con fecha. Nada se envía automáticamente.', '#/missions'], ['04', 'Conserva acuerdos y cobros', 'Versiona el alcance y registra entregas y cobros por separado. Exporta tu espacio con frecuencia.', '#/settings']].map(([n, t, b, url]) => `<a href="${url}" class="panel help-step"><span>${n}</span><div><h2>${t}</h2><p>${b}</p></div>${icon('arrow')}</a>`).join('')}</div>${notice('Para abrir el menú de búsqueda usa Ctrl/Cmd + K. Escape cierra los paneles; si un formulario tiene cambios, te pedirá conservarlos o descartarlos.')}<div class="panel padded section-space"><h2>Qué es esta versión</h2><p>Un molde funcional local. No verifica ofertas, no autentica usuarios, no tiene sincronización y no realiza conexiones externas. Funciona sin internet mientras el servidor local esté activo. Las notificaciones existen solo dentro de la aplicación.</p></div>`;
+}

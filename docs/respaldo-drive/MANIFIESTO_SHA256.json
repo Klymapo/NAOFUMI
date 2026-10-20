@@ -1,0 +1,232 @@
+{
+  "archive": "NAOFUMI_RESPALDO_COMPLETO_V02_2026-10-19.zip",
+  "product_version": "0.1.0",
+  "date": "2026-10-19",
+  "files": [
+    {
+      "path": "CONTENIDO_RESPALDO.md",
+      "bytes": 1026,
+      "sha256": "ff1ef08db66a0a8f6238d650219b5d7175a2ac31013e50e4f773e4a85d0dade5"
+    },
+    {
+      "path": "NAOFUMI_LAPIZ_ESPECIFICACION_V01.md",
+      "bytes": 94647,
+      "sha256": "0b2dab545d2f80218674fa6e55756834aac8289b32aea2b5bbbbc122559e7bab"
+    },
+    {
+      "path": "REFERENCIAS/NAOFUMI_DIRECCION_ELEGIDA_TABLON_ESMERALDA.png",
+      "bytes": 2314578,
+      "sha256": "5a9b00a54735f3c150b602f1d0ee3607e3e3e8412328408ce011f498fc446603"
+    },
+    {
+      "path": "REFERENCIAS/NAOFUMI_ENCARGO_ESTRICTO_CODEX_V01.md",
+      "bytes": 18344,
+      "sha256": "40602e02528a1a3fae37e73a51747f4bd03f35ea7e920f6a57c95956b202ca69"
+    },
+    {
+      "path": "naofumi/README.md",
+      "bytes": 5923,
+      "sha256": "f1b0046df459b9b936284631adcc86f67967d1da079c879bcf41151e33f4b2fa"
+    },
+    {
+      "path": "naofumi/artifacts/VERIFICACION_LOCAL_2026-10-19.txt",
+      "bytes": 1655,
+      "sha256": "81efb2c8c089e9ca6bd9062075b4644e5f564751cc695cce11ff9bfe19996454"
+    },
+    {
+      "path": "naofumi/artifacts/accessibility.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "naofumi/artifacts/hoy-desktop.png",
+      "bytes": 228137,
+      "sha256": "d55275d6aede74a51e628333e618d8675364219833339ac1bc618d132e1b8679"
+    },
+    {
+      "path": "naofumi/artifacts/hoy-mobile.png",
+      "bytes": 168017,
+      "sha256": "a4852d44ff0b3deafafc1d75d40068bb8eef9959246cd699010de0c12a3b59c0"
+    },
+    {
+      "path": "naofumi/artifacts/preview-desktop.png",
+      "bytes": 228193,
+      "sha256": "37d84516d14cc705dd7a8b7d5876c93cc628189083975f5736b83ac5bf8e0124"
+    },
+    {
+      "path": "naofumi/artifacts/preview-explorar.png",
+      "bytes": 103507,
+      "sha256": "8e3a914d4f9a9aae93c3124b9c425373fd3a35d95a24b6dbcc628477f4dbe298"
+    },
+    {
+      "path": "naofumi/artifacts/preview-mobile.png",
+      "bytes": 164120,
+      "sha256": "5a8d6d7f729da7bcd73c805ef18b759558ee392fd7a5e8b1539447c7b2f4e919"
+    },
+    {
+      "path": "naofumi/artifacts/preview-tablon.png",
+      "bytes": 158430,
+      "sha256": "d658c2b425aec17caa9f2c75fdd1a906e06de0519c9e769815de617650ef24a3"
+    },
+    {
+      "path": "naofumi/assets/journey.svg",
+      "bytes": 1324,
+      "sha256": "8cef641dba748f6552f0c1c805c96c39454a19ac59c0e292ef1a80ebb36d09b4"
+    },
+    {
+      "path": "naofumi/assets/mark.svg",
+      "bytes": 463,
+      "sha256": "481935de4baee516aea9dc6b3748631349ee12b5e014e2e36d2b2c9b58c7e3e2"
+    },
+    {
+      "path": "naofumi/docs/ENTREGA_Y_ESTADO.md",
+      "bytes": 12820,
+      "sha256": "f0d52299f90cf7ebc2afc9fd27c8869b0db10d4786d1e9178a3de3fe4555bf07"
+    },
+    {
+      "path": "naofumi/docs/INTEGRACIONES.md",
+      "bytes": 4511,
+      "sha256": "af2141dd6032715ad135fe38e76161cefe6725d843931135aa9c3085b44f142a"
+    },
+    {
+      "path": "naofumi/docs/PLAN_MOLDE.md",
+      "bytes": 5004,
+      "sha256": "9b077b54e04b8e669b2b722573282951833c59deb98406bdb88170ed58067f67"
+    },
+    {
+      "path": "naofumi/index.html",
+      "bytes": 1105,
+      "sha256": "cb575532a08a7ac6370372958a095fd5963c87f17b332b7d1ae412e6ea962427"
+    },
+    {
+      "path": "naofumi/manifest.webmanifest",
+      "bytes": 246,
+      "sha256": "9156423ba032cc686d1dcf5b88ee00cd439dde3a2daa7c8113fe2ccf22ff98fb"
+    },
+    {
+      "path": "naofumi/package.json",
+      "bytes": 361,
+      "sha256": "90a345d90158d2e68d70535d3cf72d88ea8c94b9bb69fdef4fd7643109c28cde"
+    },
+    {
+      "path": "naofumi/scripts/capture.mjs",
+      "bytes": 1352,
+      "sha256": "610d649a9b1764e687053022fea2144f7ef49f2a3df60162f70f23c02473e6bc"
+    },
+    {
+      "path": "naofumi/scripts/check.mjs",
+      "bytes": 1040,
+      "sha256": "53c3a4d07c48a24e2fad48a40020655e0fc09472a70f95a898f05a3970fdeb3e"
+    },
+    {
+      "path": "naofumi/server.mjs",
+      "bytes": 1955,
+      "sha256": "6134dd0bfef2207657db03b092d56a5e59f743bebf6844b5f89199ddb854d90b"
+    },
+    {
+      "path": "naofumi/src/app.js",
+      "bytes": 23152,
+      "sha256": "c8b15d160a1b83913492d3557f0b66b8a20c726b742afc0d5be60e3fd53fa96a"
+    },
+    {
+      "path": "naofumi/src/demo.js",
+      "bytes": 3910,
+      "sha256": "1e3acdda88c8b3f7ce5d57d699b43e797f3a292debf6e9828d75b21dec76cf36"
+    },
+    {
+      "path": "naofumi/src/domain.js",
+      "bytes": 21794,
+      "sha256": "51e44b7bc371f2b2f51bc7c802a46d13cb6609df2e3d72093d54dfe6fde217a4"
+    },
+    {
+      "path": "naofumi/src/forms.js",
+      "bytes": 9564,
+      "sha256": "080994665ff671f18ae0ce35991e68166279c98416d0819f537b1a877c2a6d0c"
+    },
+    {
+      "path": "naofumi/src/icons.js",
+      "bytes": 2333,
+      "sha256": "22a33dc56cee495c6a4c7284123136969a0e45bfd5c97742c2e0b3dc2291c0d0"
+    },
+    {
+      "path": "naofumi/src/integrations.js",
+      "bytes": 1380,
+      "sha256": "3b8628eea98312355945233d5b9730b96369d946c5f45f7cbb0b3d00ab99d230"
+    },
+    {
+      "path": "naofumi/src/store.js",
+      "bytes": 2731,
+      "sha256": "60834548923696c115bd09b9dc35442ba0451bad68c980d114a3aa9e1ac120cd"
+    },
+    {
+      "path": "naofumi/src/ui.js",
+      "bytes": 5399,
+      "sha256": "1fe56d553cec85dd435566d96eb8b1f77e0f3eaa4d3ef972c6bed1e275e47e74"
+    },
+    {
+      "path": "naofumi/src/views/board.js",
+      "bytes": 3186,
+      "sha256": "d89a8f0a8843ada744954ff5bbfaf85eac203c3646e96bde7c6370bd952c6fd1"
+    },
+    {
+      "path": "naofumi/src/views/detail.js",
+      "bytes": 8288,
+      "sha256": "d0058cb2579ca06531538edec6d0cee956b1b7f8a2a535ccd3de26789012281c"
+    },
+    {
+      "path": "naofumi/src/views/explore.js",
+      "bytes": 3101,
+      "sha256": "a262601c07920f867ab8702a44b5a327a66aedab294efbf94396ced0db4b4cac"
+    },
+    {
+      "path": "naofumi/src/views/home.js",
+      "bytes": 3846,
+      "sha256": "e2d5da89b5a74a86461bce5c8db5604429dcee64f0e0c5b758ae50b46b18569d"
+    },
+    {
+      "path": "naofumi/src/views/missions.js",
+      "bytes": 4925,
+      "sha256": "d77abcb58eadddd886805dc8d4bbd60429cfd33e434a3cfd54898a22ec58cb6d"
+    },
+    {
+      "path": "naofumi/src/views/settings.js",
+      "bytes": 11751,
+      "sha256": "b385a34e57e31e21b8ba2ab13e205eccbc8a63f1df1cdaa435b21841ca94d5db"
+    },
+    {
+      "path": "naofumi/styles.css",
+      "bytes": 45923,
+      "sha256": "ba62ea828626f423392795eafc7fb91cfe74fd2b8260bec90e0f5573ce4cd780"
+    },
+    {
+      "path": "naofumi/tests/accessibility.mjs",
+      "bytes": 3142,
+      "sha256": "2397ddb52b88e8c540915c7083ff58594c54f8253adc4fe9b8d8b612347d45db"
+    },
+    {
+      "path": "naofumi/tests/browser.mjs",
+      "bytes": 3493,
+      "sha256": "8da42c9498b2378f3caaa9a3b33cbd98d79f2d64ceea090d369df0f99de55494"
+    },
+    {
+      "path": "naofumi/tests/domain.test.mjs",
+      "bytes": 7871,
+      "sha256": "7b697fb5919e4d49fe64cdb96a2bee7eef5ddd16b34d6315c19183274bd92467"
+    },
+    {
+      "path": "naofumi/tests/drafts.mjs",
+      "bytes": 2582,
+      "sha256": "c0f1dcd754954b38a2eb0dc6edef60cca5de228a7e02c86c429790b8437fb681"
+    },
+    {
+      "path": "naofumi/tests/flows.mjs",
+      "bytes": 8415,
+      "sha256": "6762a97e9f1e078d3fcf46abee39f180959761cfc693b3ef7c78b62945b7782f"
+    },
+    {
+      "path": "naofumi/tests/integrations.test.mjs",
+      "bytes": 856,
+      "sha256": "95600685f5ef6bbc0c7787e2c01cdea82b4a6a2d35e95114d3cb639dfb0f3e43"
+    }
+  ]
+}
