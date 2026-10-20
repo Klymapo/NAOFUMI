@@ -2832,3 +2832,27 @@ h1,h2,h3,strong,.grow { overflow-wrap:anywhere; }
 .radar-head > div { flex: 1 1 220px; }
 @media (max-width: 700px) { .radar-art { order: -1; width: 100%; max-width: 300px; margin: 0 auto; } }
 .empty-art { width: 150px; height: auto; margin: 0 auto 6px; display: block; opacity: .95; }
+
+/* ---- Arranque y carga ---- */
+.splash { position: fixed; inset: 0; z-index: 1000; display: grid; place-content: center; justify-items: center; gap: 14px; background: radial-gradient(circle at 50% 40%, #fffaf0 0%, var(--paper) 60%); color: var(--pine-deep); transition: opacity .4s ease, visibility .4s ease; }
+.splash.hide { opacity: 0; visibility: hidden; }
+.splash-emblem { border-radius: 28px; overflow: hidden; box-shadow: 0 12px 30px #0f513233; animation: splash-float 2.4s ease-in-out infinite; }
+.splash-emblem img { display: block; }
+.splash strong { font-family: Georgia, serif; font-size: 1.5rem; letter-spacing: .18em; }
+.splash small { font-size: .85rem; opacity: .75; }
+.splash-dots { display: flex; gap: 8px; }
+.splash-dots i { width: 9px; height: 9px; border-radius: 50%; background: var(--brass); animation: splash-dot 1.1s ease-in-out infinite; }
+.splash-dots i:nth-child(2) { animation-delay: .15s; }
+.splash-dots i:nth-child(3) { animation-delay: .3s; }
+@keyframes splash-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes splash-dot { 0%, 80%, 100% { transform: scale(.6); opacity: .4; } 40% { transform: scale(1); opacity: 1; } }
+.skeleton-card { display: grid; gap: 10px; padding: 18px; border: 1px solid var(--border); border-radius: 16px; background: var(--panel); }
+.sk { display: block; border-radius: 8px; height: 12px; background: linear-gradient(90deg, #ece6d6 25%, #f7f2e6 50%, #ece6d6 75%); background-size: 200% 100%; animation: sk-shimmer 1.2s linear infinite; }
+.sk-title { height: 22px; width: 80%; }
+.sk-line.short { width: 40%; }
+.sk-bar { height: 14px; margin-top: 6px; }
+@keyframes sk-shimmer { from { background-position: 200% 0; } to { background-position: -200% 0; } }
+.update-panel .btn { margin-top: 8px; }
+/* Salvaguarda: si el código no cargara, el arranque se retira solo. */
+@keyframes splash-out { to { opacity: 0; visibility: hidden; } }
+.splash { animation: splash-out 0s linear 8s forwards !important; }

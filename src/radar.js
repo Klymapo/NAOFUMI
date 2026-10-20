@@ -114,7 +114,7 @@ function card(o, imported) {
 }
 
 export function radarSection(s, ui = {}) {
-  if (!feed && (status === 'idle' || status === 'loading')) return `<section class="radar" aria-busy="true"><p class="radar-meta">Cargando el radar…</p></section>`;
+  if (!feed && (status === 'idle' || status === 'loading')) return `<section class="radar" aria-busy="true" aria-label="Cargando el radar"><div class="radar-head"><div><h2>${icon('compass')} Radar diario</h2><p class="radar-meta">Leyendo las ofertas de hoy…</p></div></div><div class="card-grid">${'<div class="skeleton-card"><span class="sk sk-line short"></span><span class="sk sk-title"></span><span class="sk sk-line"></span><span class="sk sk-line"></span><span class="sk sk-bar"></span></div>'.repeat(2)}</div></section>`;
   if (status === 'error') return `<section class="radar">${notice(`No se pudo leer el radar (${error}). Tus datos no se ven afectados.`, 'warning', 'Radar no disponible')}${button('Reintentar', 'radar-reload', 'refresh', 'secondary')}</section>`;
   const urls = new Set(s.opportunities.map(o => o.url).filter(Boolean));
   const ok = feed.fuentes.filter(f => f.estado === 'ok').length;
