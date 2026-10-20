@@ -118,7 +118,7 @@ function card(o, imported) {
   <div class="card-tags">${o.nueva ? badge('Nueva', 'amber', 'spark') : ''}${o.lineas.map(l => badge(l, 'neutral')).join('')}</div>
   ${gauge(o)}
   <div class="card-data"><div><span>Presupuesto</span><strong>${h(budgetText(o.presupuesto))}</strong></div><div><span>Empresa</span><strong>${h(o.empresa || 'No indicada')}</strong></div></div>
-  <div class="radar-actions">${imported ? badge('Ya está en tu tablón', 'neutral', 'check') : button('Llevar al tablón', 'radar-import', 'plus', 'primary', `data-id="${h(o.id)}"`)}${link ? `<a class="btn secondary" href="${h(link)}" target="_blank" rel="noopener noreferrer">${icon('link')}<span>Ver fuente</span></a>` : ''}</div>
+  <div class="radar-actions">${imported ? badge('Guardada', 'neutral', 'check') : button('Guardar', 'radar-import', 'bookmark', 'primary', `data-id="${h(o.id)}"`)}${link ? `<a class="btn secondary" href="${h(link)}" target="_blank" rel="noopener noreferrer">${icon('link')}<span>Ver fuente</span></a>` : ''}</div>
 </article>`;
 }
 
@@ -138,7 +138,7 @@ export function radarSection(s, ui = {}) {
   <div class="radar-head"><img class="radar-art" src="./assets/img/radar.webp" alt="" width="720" height="299" decoding="async"><div><h2 id="radar-title">${icon('compass')} Radar diario</h2><p class="radar-meta">${status === 'loading' ? 'Actualizando…' : `Búsqueda de ${h(ago(feed.generado))}`} · ${feed.ofertas.length} de ${feed.total_revisadas} ofertas pasaron los filtros · fuentes ${ok}/${feed.fuentes.length}</p></div>${button(status === 'loading' ? 'Actualizando' : 'Actualizar', 'radar-reload', 'refresh', 'secondary', status === 'loading' ? 'disabled aria-busy="true"' : '')}</div>
   ${names.length > 1 ? filter : ''}
   ${failed.length ? notice(`Sin respuesta hoy: ${failed.map(f => f.fuente).join(', ')}. Una fuente caída no significa cero oportunidades.`, 'warning') : ''}
-  ${rows.length ? `<div class="card-grid">${rows.map(o => card(o, urls.has(safeLink(o.url)))).join('')}</div>` : notice('Hoy ninguna oferta pasó los filtros. Revisa Explorar o vuelve mañana.', 'info', 'Sin ofertas nuevas')}
+  ${rows.length ? `<div class="card-grid">${rows.map(o => card(o, urls.has(safeLink(o.url)))).join('')}</div>` : notice('Hoy ninguna oferta pasó los filtros. Revisa Negocios o vuelve mañana.', 'info', 'Sin ofertas nuevas')}
   ${all.length > rows.length ? `<p class="radar-meta">Mostrando ${rows.length} de ${all.length}. Las demás son menos convenientes.</p>` : ''}
   <p class="radar-meta">${h(feed.aviso)}</p>
 </section>`;

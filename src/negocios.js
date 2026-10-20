@@ -37,6 +37,15 @@ export function loadNegocios(onDone) {
     .finally(() => onDone?.());
 }
 
+export function negociosHighlights() {
+  if (status === 'sin-clave') return `<section class="radar-highlights"><div class="rh-head"><h2>${icon('compass')} Negocios del día</h2></div><p class="radar-meta">Escribe tu contraseña en Mi espacio para verlos aquí.</p><a class="rh-more" href="#/settings">Ir a Mi espacio ${icon('arrow')}</a></section>`;
+  if (!data) return '';
+  const ultima = data.negocios.reduce((m, x) => (x.fecha > m ? x.fecha : m), '');
+  const top = data.negocios.filter(x => x.fecha === ultima).slice(0, 3);
+  if (!top.length) return '';
+  return `<section class="radar-highlights"><div class="rh-head"><h2>${icon('compass')} Negocios del día</h2><a href="#/explore" class="rh-more">Ver todos ${icon('arrow')}</a></div><ol class="rh-list">${top.map(x => `<li><a href="#/explore"><span class="rh-title">${h(x.nombre)}</span><span class="rh-meta">${h(x.giro)} · ${h(x.colonia)}</span><span class="rh-score">${h(x.tamano.replace(' personas', ' pers.'))}</span></a></li>`).join('')}</ol></section>`;
+}
+
 export const negocio = id => data?.negocios.find(n => n.id === id) || null;
 
 const tel = t => String(t || '').replace(/[^\d+]/g, '').slice(0, 15);

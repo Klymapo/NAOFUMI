@@ -7,30 +7,38 @@ import { missions } from './views/missions.js';
 import { opportunityDetail, proposalDetail, workDetail } from './views/detail.js';
 import { profile, settings, sources, states, archive, help } from './views/settings.js';
 import { formFor } from './forms.js';
+import { menu } from './views/menu.js';
 import { decodeImport } from './importar.js';
 import { loadNegocios, negocio, toProspect, setClave } from './negocios.js';
 import { loadRadar, radarOffer, toOpportunity, radarAge, animateGauges } from './radar.js';
-const APP_VERSION = 'V0.3';
+const APP_VERSION = 'V0.5';
 const root = document.querySelector('#app'),
   dialog = document.querySelector('#dialog');
 const ui = {
   query: '',
   category: '',
   sort: 'recent',
-  boardTab: 'all',
-  exploreTab: 'active',
+  boardTab: 'radar',
+  exploreTab: 'dia',
   missionTab: 'works',
   detailTab: 'summary',
   previewState: 'ready',
   radarSource: ''
 };
+const UI_KEY = 'naofumi.ui.v1';
+try { const saved = JSON.parse(localStorage.getItem(UI_KEY) || '{}'); for (const k of ['boardTab', 'exploreTab', 'missionTab']) if (typeof saved[k] === 'string') ui[k] = saved[k]; } catch {}
+function saveTabs() { try { localStorage.setItem(UI_KEY, JSON.stringify({ boardTab: ui.boardTab, exploreTab: ui.exploreTab, missionTab: ui.missionTab })); } catch {} }
+if (!['radar', 'saved', 'archived'].includes(ui.boardTab)) ui.boardTab = 'radar';
+if (!['dia', 'mine', 'archived'].includes(ui.exploreTab)) ui.exploreTab = 'dia';
 let store,
   opener,
   modalDirty = false,
   mainDirty = false,
   renderedLocation = '',
   currentHash = location.hash || '#/home';
-const nav = [['home', 'Hoy', 'home'], ['board', 'Tablón', 'board'], ['explore', 'Explorar', 'compass'], ['missions', 'Misiones', 'briefcase']];
+const nav = [['home', 'Hoy', 'home'], ['board', 'Ofertas', 'board'], ['explore', 'Negocios', 'compass'], ['missions', 'Misiones', 'briefcase']];
+const mobileNav = [...nav, ['menu', 'Menú', 'menu']];
+const MENU_KEYS = ['menu', 'profile', 'settings', 'sources', 'help', 'archive', 'states'];
 const extra = [['profile', 'Mi perfil', 'user'], ['sources', 'Fuentes', 'layers'], ['settings', 'Mi espacio', 'settings']];
 function route() {
   const [key = 'home', id] = location.hash.replace(/^#\/?/, '').split('/');
@@ -65,6 +73,7 @@ function render({
     scroll: window.scrollY
   } : null;
   const active = key === 'opportunity' ? 'board' : ['proposal', 'work'].includes(key) ? 'missions' : key;
+  const mobileActive = MENU_KEYS.includes(key) ? 'menu' : active;
   let content;
   try {
     switch (key) {
@@ -107,6 +116,9 @@ function render({
       case 'help':
         content = help();
         break;
+      case 'menu':
+        content = menu(demo, APP_VERSION);
+        break;
       default:
         content = empty('Este camino no existe', 'Vuelve al inicio para continuar.', 'go-home', 'Volver a Hoy', 'compass');
     }
@@ -115,7 +127,7 @@ function render({
     console.error(e);
   }
   const unread = s.notifications.filter(n => !n.read).length;
-  root.innerHTML = `<aside class="sidebar"><a class="brand" href="#/home"><img src="./assets/mark.svg" alt="" width="43" height="43"><span>NAOFUMI<small>TU GREMIO PERSONAL</small></span></a><span class="nav-label">EL CAMINO</span><nav aria-label="Navegación principal">${nav.map(x => navItem(x, active)).join('')}</nav><div class="sidebar-rule"></div><span class="nav-label">TU CAMPAMENTO</span><nav aria-label="Tu espacio">${extra.map(x => navItem(x, active)).join('')}</nav><div class="sidebar-bottom"><div class="local-card">${icon('leaf')}<strong>A tu ritmo.<br>A tu manera.</strong><p>Un paso pequeño también<br>es avanzar.</p><span>✦</span></div><a href="#/help" class="nav-item">${icon('help')}<span>Guía del gremio</span></a><div class="sidebar-version">NAOFUMI <span>${APP_VERSION}</span></div></div></aside><div class="app-body"><header class="topbar"><a class="mobile-brand" href="#/home"><img src="./assets/mark.svg" alt="" width="32" height="32"><strong>NAOFUMI</strong></a><span class="breadcrumb">Tu campamento <span>/</span> ${h([...nav, ...extra].find(x => x[0] === active)?.[1] || 'Expediente')}</span><div class="topbar-actions"><button class="workspace-indicator ${demo ? 'demo' : ''}" data-action="spaces">${icon(demo ? 'eye' : 'lock')}<span>${demo ? 'Ejemplos' : 'Mi espacio'}</span></button>${iconButton('Actualizar la app', 'app-update', 'refresh')}${iconButton('Buscar en mi espacio', 'search', 'search')}${iconButton('Notificaciones', 'notifications', 'bell', `${unread ? 'data-count="' + unread + '"' : ''}`)}<a class="avatar" href="#/profile" aria-label="Abrir mi perfil">${h(s.profile.name ? s.profile.name.slice(0, 1).toUpperCase() : 'A')}</a></div></header><div class="mode-strip"><span class="local-dot"></span><span>${demo ? 'Estás explorando datos ficticios.' : 'Guardado en este navegador.'}</span><button data-action="${demo ? 'space-personal' : 'export'}">${demo ? 'Abrir mi espacio' : 'Exportar copia'} ${icon('arrow')}</button><span class="connection-label">${icon('lock')}Sin conexiones externas</span></div><main id="main" class="main-content">${content}<footer class="page-footer"><span>✦ &nbsp; NAOFUMI</span><span>Oportunidades claras. Decisiones tuyas.</span></footer></main><nav class="bottom-nav" aria-label="Navegación móvil">${nav.map(x => navItem(x, active, true)).join('')}</nav></div>`;
+  root.innerHTML = `<aside class="sidebar"><a class="brand" href="#/home"><img src="./assets/mark.svg" alt="" width="43" height="43"><span>NAOFUMI<small>TU GREMIO PERSONAL</small></span></a><span class="nav-label">EL CAMINO</span><nav aria-label="Navegación principal">${nav.map(x => navItem(x, active)).join('')}</nav><div class="sidebar-rule"></div><span class="nav-label">TU CAMPAMENTO</span><nav aria-label="Tu espacio">${extra.map(x => navItem(x, active)).join('')}</nav><div class="sidebar-bottom"><div class="local-card">${icon('leaf')}<strong>A tu ritmo.<br>A tu manera.</strong><p>Un paso pequeño también<br>es avanzar.</p><span>✦</span></div><a href="#/help" class="nav-item">${icon('help')}<span>Guía del gremio</span></a><div class="sidebar-version">NAOFUMI <span>${APP_VERSION}</span></div></div></aside><div class="app-body"><header class="topbar"><a class="mobile-brand" href="#/home"><img src="./assets/mark.svg" alt="" width="32" height="32"><strong>NAOFUMI</strong></a><span class="breadcrumb">Tu campamento <span>/</span> ${h([...mobileNav, ...extra, ['help', 'Guía'], ['archive', 'Archivo']].find(x => x[0] === active)?.[1] || 'Expediente')}</span><div class="topbar-actions"><button class="workspace-indicator ${demo ? 'demo' : ''}" data-action="spaces">${icon(demo ? 'eye' : 'lock')}<span>${demo ? 'Ejemplos' : 'Mi espacio'}</span></button>${iconButton('Actualizar la app', 'app-update', 'refresh')}${iconButton('Buscar en mi espacio', 'search', 'search')}${iconButton('Notificaciones', 'notifications', 'bell', `${unread ? 'data-count="' + unread + '"' : ''}`)}<a class="avatar" href="#/profile" aria-label="Abrir mi perfil">${h(s.profile.name ? s.profile.name.slice(0, 1).toUpperCase() : 'A')}</a></div></header>${demo ? `<div class="mode-strip demo-strip"><span class="local-dot"></span><span>Estás viendo ejemplos ficticios.</span><button data-action="space-personal">Volver a Mi espacio ${icon('arrow')}</button></div>` : ''}<main id="main" class="main-content">${content}<footer class="page-footer"><span>✦ &nbsp; NAOFUMI</span><span>Oportunidades claras. Decisiones tuyas.</span></footer></main><nav class="bottom-nav" aria-label="Navegación móvil">${mobileNav.map(x => navItem(x, mobileActive, true)).join('')}</nav></div>`;
   document.documentElement.dataset.density = s.preferences.density;
   root.querySelector('#main').tabIndex = -1;
   for (const draft of drafts) {
@@ -127,7 +139,7 @@ function render({
   }
   renderedLocation = locationKey;
   document.documentElement.dataset.motion = s.preferences.reduceMotion ? 'reduced' : 'normal';
-  document.title = `${[...nav, ...extra].find(x => x[0] === active)?.[1] || 'Expediente'} · NAOFUMI`;
+  document.title = `${[...mobileNav, ...extra].find(x => x[0] === active)?.[1] || 'Expediente'} · NAOFUMI`;
   if (focus?.id) {
     const el = document.getElementById(focus.id);
     if (el) {
@@ -302,7 +314,7 @@ document.addEventListener('click', async event => {
       case 'radar-import': {
         const offer = radarOffer(id);
         if (!offer) throw new Error('Esta oferta ya no está en el radar. Recarga la página.');
-        dispatch({ type: 'opportunity.add', data: toOpportunity(offer) }, 'Llevada al tablón. Revisa la fuente antes de postular.');
+        dispatch({ type: 'opportunity.add', data: toOpportunity(offer) }, 'Guardada en Ofertas › Guardadas. Revisa la fuente antes de postular.');
         break;
       }
       case 'negocio-add': {
@@ -352,14 +364,17 @@ document.addEventListener('click', async event => {
         break;
       case 'board-tab':
         ui.boardTab = el.dataset.tab;
+        saveTabs();
         render();
         break;
       case 'explore-tab':
         ui.exploreTab = el.dataset.tab;
+        saveTabs();
         render();
         break;
       case 'mission-tab':
         ui.missionTab = el.dataset.tab;
+        saveTabs();
         render();
         break;
       case 'detail-tab':

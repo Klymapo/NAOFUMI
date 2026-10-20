@@ -2,7 +2,7 @@ import { createState, reduce, validateState, mergeBackup } from './domain.js';
 import { createDemo } from './demo.js';
 const PREFIX = 'naofumi.local.v1.';
 export function createStore(storage) {
-  let space = storage.getItem(PREFIX + 'space') === 'personal' ? 'personal' : 'demo';
+  let space = 'personal'; // siempre abre en Mi espacio; Ejemplos solo desde el Menú
   let persistedRaw = storage.getItem(PREFIX + space);
   let state = read(space);
   const listeners = new Set();
