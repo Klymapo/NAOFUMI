@@ -7,7 +7,7 @@ import { missions } from './views/missions.js';
 import { opportunityDetail, proposalDetail, workDetail } from './views/detail.js';
 import { profile, settings, sources, states, archive, help } from './views/settings.js';
 import { formFor } from './forms.js';
-import { loadRadar, radarOffer, toOpportunity } from './radar.js';
+import { loadRadar, radarOffer, toOpportunity, radarAge, animateGauges } from './radar.js';
 const root = document.querySelector('#app'),
   dialog = document.querySelector('#dialog');
 const ui = {
@@ -112,7 +112,7 @@ function render({
     console.error(e);
   }
   const unread = s.notifications.filter(n => !n.read).length;
-  root.innerHTML = `<aside class="sidebar"><a class="brand" href="#/home"><img src="./assets/mark.svg" alt="" width="43" height="43"><span>NAOFUMI<small>TU GREMIO PERSONAL</small></span></a><span class="nav-label">EL CAMINO</span><nav aria-label="Navegación principal">${nav.map(x => navItem(x, active)).join('')}</nav><div class="sidebar-rule"></div><span class="nav-label">TU CAMPAMENTO</span><nav aria-label="Tu espacio">${extra.map(x => navItem(x, active)).join('')}</nav><div class="sidebar-bottom"><div class="local-card">${icon('leaf')}<strong>A tu ritmo.<br>A tu manera.</strong><p>Un paso pequeño también<br>es avanzar.</p><span>✦</span></div><a href="#/help" class="nav-item">${icon('help')}<span>Guía del gremio</span></a><div class="sidebar-version">MOLDE LOCAL <span>V0.1</span></div></div></aside><div class="app-body"><header class="topbar"><a class="mobile-brand" href="#/home"><img src="./assets/mark.svg" alt="" width="32" height="32"><strong>NAOFUMI</strong></a><span class="breadcrumb">Tu campamento <span>/</span> ${h([...nav, ...extra].find(x => x[0] === active)?.[1] || 'Expediente')}</span><div class="topbar-actions"><button class="workspace-indicator ${demo ? 'demo' : ''}" data-action="spaces">${icon(demo ? 'eye' : 'lock')}<span>${demo ? 'Ejemplos' : 'Mi espacio'}</span></button>${iconButton('Buscar en mi espacio', 'search', 'search')}${iconButton('Notificaciones', 'notifications', 'bell', `${unread ? 'data-count="' + unread + '"' : ''}`)}<a class="avatar" href="#/profile" aria-label="Abrir mi perfil">${h(s.profile.name ? s.profile.name.slice(0, 1).toUpperCase() : 'A')}</a></div></header><div class="mode-strip"><span class="local-dot"></span><span>${demo ? 'Estás explorando datos ficticios.' : 'Guardado en este navegador.'}</span><button data-action="${demo ? 'space-personal' : 'export'}">${demo ? 'Abrir mi espacio' : 'Exportar copia'} ${icon('arrow')}</button><span class="connection-label">${icon('lock')}Sin conexiones externas</span></div><main id="main" class="main-content">${content}<footer class="page-footer"><span>✦ &nbsp; NAOFUMI</span><span>Oportunidades claras. Decisiones tuyas.</span></footer></main><nav class="bottom-nav" aria-label="Navegación móvil">${nav.map(x => navItem(x, active, true)).join('')}</nav></div>`;
+  root.innerHTML = `<aside class="sidebar"><a class="brand" href="#/home"><img src="./assets/mark.svg" alt="" width="43" height="43"><span>NAOFUMI<small>TU GREMIO PERSONAL</small></span></a><span class="nav-label">EL CAMINO</span><nav aria-label="Navegación principal">${nav.map(x => navItem(x, active)).join('')}</nav><div class="sidebar-rule"></div><span class="nav-label">TU CAMPAMENTO</span><nav aria-label="Tu espacio">${extra.map(x => navItem(x, active)).join('')}</nav><div class="sidebar-bottom"><div class="local-card">${icon('leaf')}<strong>A tu ritmo.<br>A tu manera.</strong><p>Un paso pequeño también<br>es avanzar.</p><span>✦</span></div><a href="#/help" class="nav-item">${icon('help')}<span>Guía del gremio</span></a><div class="sidebar-version">NAOFUMI <span>V0.2</span></div></div></aside><div class="app-body"><header class="topbar"><a class="mobile-brand" href="#/home"><img src="./assets/mark.svg" alt="" width="32" height="32"><strong>NAOFUMI</strong></a><span class="breadcrumb">Tu campamento <span>/</span> ${h([...nav, ...extra].find(x => x[0] === active)?.[1] || 'Expediente')}</span><div class="topbar-actions"><button class="workspace-indicator ${demo ? 'demo' : ''}" data-action="spaces">${icon(demo ? 'eye' : 'lock')}<span>${demo ? 'Ejemplos' : 'Mi espacio'}</span></button>${iconButton('Buscar en mi espacio', 'search', 'search')}${iconButton('Notificaciones', 'notifications', 'bell', `${unread ? 'data-count="' + unread + '"' : ''}`)}<a class="avatar" href="#/profile" aria-label="Abrir mi perfil">${h(s.profile.name ? s.profile.name.slice(0, 1).toUpperCase() : 'A')}</a></div></header><div class="mode-strip"><span class="local-dot"></span><span>${demo ? 'Estás explorando datos ficticios.' : 'Guardado en este navegador.'}</span><button data-action="${demo ? 'space-personal' : 'export'}">${demo ? 'Abrir mi espacio' : 'Exportar copia'} ${icon('arrow')}</button><span class="connection-label">${icon('lock')}Sin conexiones externas</span></div><main id="main" class="main-content">${content}<footer class="page-footer"><span>✦ &nbsp; NAOFUMI</span><span>Oportunidades claras. Decisiones tuyas.</span></footer></main><nav class="bottom-nav" aria-label="Navegación móvil">${nav.map(x => navItem(x, active, true)).join('')}</nav></div>`;
   document.documentElement.dataset.density = s.preferences.density;
   root.querySelector('#main').tabIndex = -1;
   for (const draft of drafts) {
@@ -137,6 +137,7 @@ function render({
     }
     window.scrollTo(0, focus.scroll);
   }
+  animateGauges(root);
 }
 function toast(message, {
   action,
@@ -265,8 +266,8 @@ document.addEventListener('click', async event => {
         break;
       }
       case 'radar-reload':
-        loadRadar(() => render());
-        render();
+        loadRadar(() => { render({ preserve: true }); toast('Radar actualizado.'); });
+        render({ preserve: true });
         break;
       case 'go-board':
         location.hash = '/board';
@@ -545,7 +546,9 @@ window.addEventListener('hashchange', () => {
   currentHash = location.hash;
   ui.detailTab = 'summary';
   if (dialog.open) closeDialog(true);
-  render();
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.dataset.motion === 'reduced';
+  if (document.startViewTransition && !still) document.startViewTransition(() => render());
+  else render();
   window.scrollTo(0, 0);
   document.querySelector('main h1')?.focus({
     preventScroll: true
@@ -567,7 +570,19 @@ try {
   store.subscribe(() => render());
   render();
   loadRadar(() => render({ preserve: true }));
-  if ('serviceWorker' in navigator && location.protocol === 'https:') navigator.serviceWorker.register('./sw.js').catch(() => {});
+  let swReg = null;
+  if ('serviceWorker' in navigator && location.protocol === 'https:') {
+    const hadController = !!navigator.serviceWorker.controller;
+    navigator.serviceWorker.register('./sw.js').then(reg => { swReg = reg; }).catch(() => {});
+    navigator.serviceWorker.addEventListener('controllerchange', () => {
+      if (hadController) toast('Hay una versión nueva de NAOFUMI.', { action: () => location.reload(), label: 'Recargar' });
+    });
+  }
+  document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState !== 'visible') return;
+    swReg?.update().catch(() => {});
+    if (radarAge() > 36e5) loadRadar(() => render({ preserve: true }));
+  });
 } catch (error) {
   root.innerHTML = `<main class="boot recovery"><img src="./assets/mark.svg" width="64" height="64" alt=""><h1>No pudimos abrir tu espacio</h1><p>${h(error.message)}</p><p>No hemos borrado ni reemplazado los datos. Puedes descargar el contenido original para revisarlo.</p><button id="recover-raw" class="btn primary">Descargar datos originales</button></main>`;
   document.querySelector('#recover-raw').onclick = () => {

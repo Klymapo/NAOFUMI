@@ -1,5 +1,5 @@
 // Service worker de NAOFUMI: abre sin conexión y busca primero la red para el radar.
-const CACHE = 'naofumi-v4';
+const CACHE = 'naofumi-v5';
 const SHELL = ['./', './index.html', './styles.css', './manifest.webmanifest', './assets/mark.svg', './assets/journey.svg',
   './src/app.js', './src/store.js', './src/domain.js', './src/ui.js', './src/forms.js', './src/icons.js', './src/demo.js',
   './src/integrations.js', './src/radar.js', './src/views/board.js', './src/views/detail.js', './src/views/explore.js',

@@ -5,6 +5,8 @@ import { h, icon, badge, button, notice } from './ui.js';
 let feed = null;
 let status = 'idle';
 let error = '';
+let loadedAt = 0;
+const animated = new Set();
 
 const SAFE = /^https:\/\/[^\s"'<>]+$/i;
 const safeLink = u => (SAFE.test(String(u || '')) ? String(u) : '');
@@ -15,10 +17,30 @@ export function loadRadar(onDone) {
     .then(r => { if (!r.ok) throw new Error(`HTTP ${r.status}`); return r.json(); })
     .then(d => {
       if (!d || !Array.isArray(d.ofertas) || !Array.isArray(d.fuentes)) throw new Error('El archivo del radar no tiene el formato esperado.');
-      feed = d; status = 'ready'; error = '';
+      feed = d; status = 'ready'; error = ''; loadedAt = Date.now();
     })
-    .catch(e => { status = 'error'; error = e.message || 'Error desconocido'; })
+    .catch(e => { status = feed ? 'ready' : 'error'; error = e.message || 'Error desconocido'; })
     .finally(() => onDone?.());
+}
+
+export const radarAge = () => (loadedAt ? Date.now() - loadedAt : Infinity);
+
+// Llena cada medidor una sola vez, de 0 a su valor (respeta «reducir movimiento»).
+export function animateGauges(root = document) {
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches || document.documentElement.dataset.motion === 'reduced';
+  for (const m of root.querySelectorAll('meter[data-id]')) {
+    const target = Number(m.getAttribute('value')) || 0;
+    if (still || animated.has(m.dataset.id)) continue;
+    animated.add(m.dataset.id);
+    const t0 = performance.now();
+    m.value = 0;
+    const step = now => {
+      const k = Math.min(1, (now - t0) / 700);
+      m.value = target * (1 - Math.pow(1 - k, 3));
+      if (k < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
 }
 
 export const radarOffer = id => feed?.ofertas.find(o => o.id === id) || null;
@@ -73,7 +95,7 @@ function gauge(o) {
   const rows = c.factores.map(f => `<li><span>${h(f.nombre)}</span><strong>${f.puntos > 0 && !f.max ? '+' : ''}${h(String(f.puntos))}${f.max ? ` / ${f.max}` : ''}</strong>${f.detalle && f.detalle !== f.nombre ? `<small>${h(f.detalle)}</small>` : ''}</li>`).join('');
   return `<div class="radar-gauge ${TONE[c.dictamen] || ''}">
     <div class="gauge-head"><span>¿Conviene postular?</span><strong>${h(c.dictamen)} · ${h(String(c.valor))}/100</strong></div>
-    <meter min="0" max="100" low="45" high="70" optimum="100" value="${Number(c.valor) || 0}" aria-label="Conveniencia ${h(String(c.valor))} de 100: ${h(c.dictamen)}"></meter>
+    <meter data-id="${h(o.id)}" min="0" max="100" low="45" high="70" optimum="100" value="${Number(c.valor) || 0}" aria-label="Conveniencia ${h(String(c.valor))} de 100: ${h(c.dictamen)}"></meter>
     <details><summary>¿Por qué?</summary><ul class="gauge-factors">${rows}</ul><p class="radar-meta">Mide qué tanto te conviene invertir tiempo y pujas. No es la probabilidad de ganar el proyecto.</p></details>
   </div>`;
 }
@@ -92,7 +114,7 @@ function card(o, imported) {
 }
 
 export function radarSection(s, ui = {}) {
-  if (status === 'idle' || status === 'loading') return `<section class="radar" aria-busy="true"><p class="radar-meta">Cargando el radar…</p></section>`;
+  if (!feed && (status === 'idle' || status === 'loading')) return `<section class="radar" aria-busy="true"><p class="radar-meta">Cargando el radar…</p></section>`;
   if (status === 'error') return `<section class="radar">${notice(`No se pudo leer el radar (${error}). Tus datos no se ven afectados.`, 'warning', 'Radar no disponible')}${button('Reintentar', 'radar-reload', 'refresh', 'secondary')}</section>`;
   const urls = new Set(s.opportunities.map(o => o.url).filter(Boolean));
   const ok = feed.fuentes.filter(f => f.estado === 'ok').length;
@@ -104,7 +126,7 @@ export function radarSection(s, ui = {}) {
   const counts = n => feed.ofertas.filter(o => o.fuente_nombre === n).length;
   const filter = `<label class="filter-select radar-filter">${icon('filter')}<select id="radar-source" aria-label="Filtrar el radar por fuente"><option value="">Todas las fuentes (${feed.ofertas.length})</option>${names.map(n => `<option value="${h(n)}" ${n === pick ? 'selected' : ''}>${h(n)} (${counts(n)})</option>`).join('')}</select></label>`;
   return `<section class="radar" aria-labelledby="radar-title">
-  <div class="radar-head"><h2 id="radar-title">${icon('compass')} Radar diario</h2><p class="radar-meta">Actualizado ${h(ago(feed.generado))} · ${feed.ofertas.length} de ${feed.total_revisadas} ofertas pasaron los filtros · fuentes ${ok}/${feed.fuentes.length}</p></div>
+  <div class="radar-head"><div><h2 id="radar-title">${icon('compass')} Radar diario</h2><p class="radar-meta">${status === 'loading' ? 'Actualizando…' : `Búsqueda de ${h(ago(feed.generado))}`} · ${feed.ofertas.length} de ${feed.total_revisadas} ofertas pasaron los filtros · fuentes ${ok}/${feed.fuentes.length}</p></div>${button(status === 'loading' ? 'Actualizando' : 'Actualizar', 'radar-reload', 'refresh', 'secondary', status === 'loading' ? 'disabled aria-busy="true"' : '')}</div>
   ${names.length > 1 ? filter : ''}
   ${failed.length ? notice(`Sin respuesta hoy: ${failed.map(f => f.fuente).join(', ')}. Una fuente caída no significa cero oportunidades.`, 'warning') : ''}
   ${rows.length ? `<div class="card-grid">${rows.map(o => card(o, urls.has(safeLink(o.url)))).join('')}</div>` : notice('Hoy ninguna oferta pasó los filtros. Revisa Explorar o vuelve mañana.', 'info', 'Sin ofertas nuevas')}
