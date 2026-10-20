@@ -2879,3 +2879,15 @@ h1,h2,h3,strong,.grow { overflow-wrap:anywhere; }
   .radar-actions > .btn, .radar-actions > .badge { flex: 1 1 0; justify-content: center; }
   .radar { padding: 12px; }
 }
+
+/* ---- Negocios del día ---- */
+.negocios-dia { border-top: 1px solid var(--border); padding-top: 8px; }
+.negocios-dia summary { cursor: pointer; font-weight: 700; min-height: 44px; display: flex; align-items: center; gap: 8px; }
+.negocios-dia summary span { font-size: .75rem; padding: 2px 8px; border-radius: 999px; background: var(--pine-light); }
+.negocio-card { display: grid; gap: 8px; padding: 16px; border: 1px solid var(--border); border-radius: 16px; background: var(--paper); animation: rise-in .35s ease-out both; }
+.negocio-card h3 { margin: 0; font-size: 1.15rem; overflow-wrap: anywhere; }
+.negocio-top { display: flex; justify-content: space-between; gap: 8px; flex-wrap: wrap; font-size: .8rem; }
+.negocio-hip { margin: 0; font-size: .85rem; line-height: 1.5; }
+.negocio-contacto { display: flex; gap: 8px; flex-wrap: wrap; }
+.negocio-contacto .btn { min-height: 44px; }
+.negocios-panel input { width: 100%; min-height: 44px; margin: 6px 0 10px; padding: 8px 12px; border: 1px solid var(--border); border-radius: 10px; background: var(--paper); font: inherit; }

@@ -8,6 +8,7 @@ import { opportunityDetail, proposalDetail, workDetail } from './views/detail.js
 import { profile, settings, sources, states, archive, help } from './views/settings.js';
 import { formFor } from './forms.js';
 import { decodeImport } from './importar.js';
+import { loadNegocios, negocio, toProspect, setClave } from './negocios.js';
 import { loadRadar, radarOffer, toOpportunity, radarAge, animateGauges } from './radar.js';
 const APP_VERSION = 'V0.3';
 const root = document.querySelector('#app'),
@@ -304,6 +305,32 @@ document.addEventListener('click', async event => {
         dispatch({ type: 'opportunity.add', data: toOpportunity(offer) }, 'Llevada al tablón. Revisa la fuente antes de postular.');
         break;
       }
+      case 'negocio-add': {
+        const n = negocio(id);
+        if (!n) throw new Error('Ese negocio ya no está en la lista. Actualiza.');
+        if (store.getSpace() !== 'personal') { store.switchSpace('personal'); toast('Cambié a Mi espacio para guardar datos reales.'); }
+        dispatch({ type: 'prospect.add', data: toProspect(n) }, 'Agregado a tus hipótesis en Explorar.');
+        break;
+      }
+      case 'negocios-reload':
+        loadNegocios(() => render({ preserve: true }));
+        render({ preserve: true });
+        break;
+      case 'negocios-clave-guardar': {
+        const v = document.querySelector('#negocios-clave')?.value || '';
+        if (v.length < 12) throw new Error('La contraseña debe tener al menos 12 caracteres, igual que en GitHub.');
+        if (!setClave(v)) throw new Error('Este navegador no permite guardar la contraseña.');
+        toast('Contraseña guardada en este dispositivo. Abriendo los negocios…');
+        loadNegocios(() => render({ preserve: true }));
+        location.hash = '/explore';
+        break;
+      }
+      case 'negocios-clave-olvidar':
+        setClave('');
+        loadNegocios(() => render());
+        toast('Contraseña borrada de este dispositivo.');
+        render();
+        break;
       case 'app-update':
         await updateApp();
         break;
@@ -614,6 +641,7 @@ try {
   if (!handleImport()) render();
   hideSplash();
   loadRadar(() => render({ preserve: true }));
+  loadNegocios(() => render({ preserve: true }));
   let swReg = null;
   if ('serviceWorker' in navigator && location.protocol === 'https:') {
     const hadController = !!navigator.serviceWorker.controller;
@@ -625,7 +653,7 @@ try {
   document.addEventListener('visibilitychange', () => {
     if (document.visibilityState !== 'visible') return;
     swReg?.update().catch(() => {});
-    if (radarAge() > 36e5) loadRadar(() => render({ preserve: true }));
+    if (radarAge() > 36e5) { loadRadar(() => render({ preserve: true })); loadNegocios(() => render({ preserve: true })); }
   });
 } catch (error) {
   hideSplash();

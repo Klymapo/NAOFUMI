@@ -1,8 +1,8 @@
 // Service worker de NAOFUMI: abre sin conexión y busca primero la red para el radar.
-const CACHE = 'naofumi-v8';
+const CACHE = 'naofumi-v9';
 const SHELL = ['./', './index.html', './styles.css', './manifest.webmanifest', './assets/mark.svg', './assets/journey.svg', './assets/img/hoy-1600.webp', './assets/img/hoy-900.webp', './assets/img/radar.webp', './assets/img/vacio.webp', './assets/icons/icon-192.png',
   './src/app.js', './src/store.js', './src/domain.js', './src/ui.js', './src/forms.js', './src/icons.js', './src/demo.js',
-  './src/integrations.js', './src/radar.js', './src/importar.js', './src/views/board.js', './src/views/detail.js', './src/views/explore.js',
+  './src/integrations.js', './src/radar.js', './src/importar.js', './src/negocios.js', './src/views/board.js', './src/views/detail.js', './src/views/explore.js',
   './src/views/home.js', './src/views/missions.js', './src/views/settings.js'];
 
 self.addEventListener('install', e => {
