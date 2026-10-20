@@ -230,8 +230,8 @@
     "himalayas": true,
     "jobicy": true,
     "freelancer": true,
-    "hn": true,
-    "reddit": true
+    "hn": false,
+    "reddit": false
   },
   "freelancer_busquedas": [
     "excel",
@@ -249,5 +249,6 @@
   "reddit_subs": [
     "forhire",
     "HireaWriter"
-  ]
+  ],
+  "_fuentes_desactivadas": "2026-10-20: reddit responde 403 a GitHub Actions; el índice de HN (Algolia) no trae los hilos 'Seeking freelancer' recientes. Reactivar si cambian."
 }
