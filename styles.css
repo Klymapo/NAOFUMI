@@ -2780,3 +2780,16 @@ h1,h2,h3,strong,.grow { overflow-wrap:anywhere; }
 .radar-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
 .radar-actions .btn { min-height: 44px; }
 .radar-card h3 a { overflow-wrap: anywhere; }
+
+.radar-filter { max-width: 360px; }
+
+.radar-gauge { display: grid; gap: 6px; padding: 10px 12px; border-radius: 12px; background: var(--paper); border: 1px solid var(--border); }
+.radar-gauge .gauge-head { display: flex; justify-content: space-between; gap: 8px; font-size: .85rem; flex-wrap: wrap; }
+.radar-gauge.good .gauge-head strong { color: var(--pine); }
+.radar-gauge.mid .gauge-head strong { color: var(--brass); }
+.radar-gauge.low .gauge-head strong { color: #9b3a2e; }
+.radar-gauge meter { width: 100%; height: 12px; }
+.radar-gauge summary { cursor: pointer; font-size: .85rem; min-height: 32px; display: flex; align-items: center; }
+.gauge-factors { list-style: none; margin: 6px 0; padding: 0; display: grid; gap: 6px; font-size: .85rem; }
+.gauge-factors li { display: grid; grid-template-columns: 1fr auto; gap: 0 8px; }
+.gauge-factors small { grid-column: 1 / -1; opacity: .75; }

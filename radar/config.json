@@ -79,9 +79,7 @@
       "10+ years",
       "8+ years",
       "7+ years"
-    ],
-    "presupuesto_bajo_usd_hora": 10,
-    "presupuesto_bajo_usd_fijo": 50
+    ]
   },
   "lineas": {
     "Datos y BI": {
@@ -250,5 +248,26 @@
     "forhire",
     "HireaWriter"
   ],
-  "_fuentes_desactivadas": "2026-10-20: reddit responde 403 a GitHub Actions; el índice de HN (Algolia) no trae los hilos 'Seeking freelancer' recientes. Reactivar si cambian."
+  "_fuentes_desactivadas": "2026-10-20: reddit responde 403 a GitHub Actions; el índice de HN (Algolia) no trae los hilos 'Seeking freelancer' recientes. Reactivar si cambian.",
+  "minimos_por_fuente": {
+    "_nota": "Se descartan ofertas por debajo de estos montos (usa el máximo del rango en USD). Freelancer.com cobra 10 % o US$5 por proyecto y pide US$20 de saldo para pujar.",
+    "freelancer": {
+      "proyecto_usd": 50,
+      "hora_usd": 10
+    }
+  },
+  "nota_postulacion": {
+    "freelancer": "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5"
+  },
+  "comisiones": {
+    "_nota": "Comisión que la plataforma descuenta al freelancer.",
+    "freelancer": {
+      "porcentaje": 10,
+      "minimo_usd": 5
+    }
+  },
+  "umbrales_conveniencia": {
+    "conviene": 70,
+    "revisar": 45
+  }
 }

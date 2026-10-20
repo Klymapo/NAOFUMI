@@ -18,7 +18,8 @@ const ui = {
   exploreTab: 'active',
   missionTab: 'works',
   detailTab: 'summary',
-  previewState: 'ready'
+  previewState: 'ready',
+  radarSource: ''
 };
 let store,
   opener,
@@ -423,6 +424,12 @@ document.addEventListener('input', e => {
 document.addEventListener('change', async e => {
   if (e.target.id === 'category-filter') {
     ui.category = e.target.value;
+    render({
+      preserve: true
+    });
+  }
+  if (e.target.id === 'radar-source') {
+    ui.radarSource = e.target.value;
     render({
       preserve: true
     });

@@ -77,16 +77,45 @@ class Filtros(unittest.TestCase):
         self.assertIsNone(motivo)
         self.assertEqual(o["categoria_app"], "Narrativa y guion")
 
-    def test_presupuesto_bajo_baja_puntaje(self):
+    def test_presupuesto_bajo_baja_conveniencia(self):
         _, alto = filters.evaluate(mk(presupuesto=sources.budget(30, 40, "USD", "hora")), CFG, NOW)
         _, bajo = filters.evaluate(mk(presupuesto=sources.budget(3, 5, "USD", "hora")), CFG, NOW)
         self.assertGreater(alto["puntaje"], bajo["puntaje"])
-        self.assertIn("Presupuesto bajo", bajo["motivos"])
+        self.assertEqual(alto["puntaje"], alto["conveniencia"]["valor"])
+
+    def test_conveniencia_descuenta_comision_y_costo(self):
+        fl = dict(fuente="freelancer", fuente_nombre="Freelancer.com")
+        _, directo = filters.evaluate(mk(presupuesto=sources.budget(60, 80, "USD", "proyecto")), CFG, NOW)
+        _, puja = filters.evaluate(mk(presupuesto=sources.budget(60, 80, "USD", "proyecto"), **fl), CFG, NOW)
+        pago = next(f for f in puja["conveniencia"]["factores"] if f["nombre"] == "Pago")
+        self.assertIn("US$72", pago["detalle"])  # 80 - 10 % (8) = 72
+        self.assertGreater(directo["puntaje"], puja["puntaje"])
+
+    def test_conveniencia_competencia_y_dictamen(self):
+        fl = dict(fuente="freelancer", fuente_nombre="Freelancer.com", presupuesto=sources.budget(300, 500, "USD", "proyecto"))
+        _, pocas = filters.evaluate(mk(competencia=3, **fl), CFG, NOW)
+        _, muchas = filters.evaluate(mk(competencia=80, **fl), CFG, NOW)
+        self.assertGreater(pocas["puntaje"], muchas["puntaje"])
+        for o in (pocas, muchas):
+            c = o["conveniencia"]
+            self.assertTrue(0 <= c["valor"] <= 100)
+            self.assertIn(c["dictamen"], ("Conviene", "Revisar", "No conviene"))
+            self.assertEqual(c["valor"], max(0, min(100, sum(f["puntos"] for f in c["factores"]))))
 
     def test_senior_baja_puntaje(self):
         _, jr = filters.evaluate(mk(), CFG, NOW)
         _, sr = filters.evaluate(mk(titulo="Senior Power BI dashboard consultant"), CFG, NOW)
         self.assertLess(sr["puntaje"], jr["puntaje"])
+
+    def test_minimo_freelancer(self):
+        fl = dict(fuente="freelancer", fuente_nombre="Freelancer.com")
+        self.assertEqual(why(mk(presupuesto=sources.budget(10, 30, "USD", "proyecto"), **fl)), "bajo el mínimo de Freelancer.com")
+        self.assertEqual(why(mk(presupuesto=sources.budget(3, 8, "USD", "hora"), **fl)), "bajo el mínimo de Freelancer.com")
+        motivo, o = filters.evaluate(mk(presupuesto=sources.budget(100, 250, "USD", "proyecto"), **fl), CFG, NOW)
+        self.assertIsNone(motivo)
+        self.assertTrue(any("6 pujas" in m for m in o["motivos"]))
+        # otras fuentes no tienen mínimo duro
+        self.assertIsNone(why(mk(presupuesto=sources.budget(10, 30, "USD", "proyecto"))))
 
     def test_dedupe(self):
         a = filters.evaluate(mk(), CFG, NOW)[1]

@@ -73,7 +73,7 @@ def budget(min_v=None, max_v=None, currency="USD", period="", usd_rate=None):
 def offer(**kw):
     base = {"fuente": "", "fuente_nombre": "", "fuente_url": "", "id_externo": "", "url": "", "titulo": "",
             "empresa": "", "descripcion": "", "publicado": None, "tipo": "", "ubicacion": "", "idioma": "",
-            "presupuesto": None, "local": False}
+            "presupuesto": None, "local": False, "competencia": None}
     base.update(kw)
     base["titulo"] = plain(base["titulo"], 200)
     base["empresa"] = plain(base["empresa"], 120)
@@ -177,6 +177,7 @@ def freelancer(cfg):
                 descripcion=plain(p.get("description") or p.get("preview_description")),
                 publicado=iso_from_epoch(p.get("time_submitted")), tipo="freelance " + str(p.get("type", "")),
                 ubicacion="remote", idioma=str(p.get("language") or ""), local=bool(p.get("local")),
+                competencia=(p.get("bid_stats") or {}).get("bid_count"),
                 presupuesto=budget(b.get("minimum"), b.get("maximum"), cur.get("code") or "USD", per, cur.get("exchange_rate"))))
     return out
 

@@ -57,7 +57,7 @@ export function toOpportunity(o) {
     deadline: '',
     requirements: '',
     notes: [
-      `Encontrada por el radar de NAOFUMI el ${(o.descubierto || '').slice(0, 10)} · puntaje ${o.puntaje}.`,
+      `Encontrada por el radar de NAOFUMI el ${(o.descubierto || '').slice(0, 10)} · conveniencia ${o.puntaje}/100 (${o.conveniencia?.dictamen || 'sin dictamen'}).`,
       `Motivos: ${o.motivos.join('; ')}.`,
       `Presupuesto según la fuente: ${budgetText(b)}.`,
       `Fuente: ${o.fuente_nombre}. Revisa la publicación original antes de postular.`
@@ -65,30 +65,50 @@ export function toOpportunity(o) {
   };
 }
 
+const TONE = { 'Conviene': 'good', 'Revisar': 'mid', 'No conviene': 'low' };
+
+function gauge(o) {
+  const c = o.conveniencia;
+  if (!c) return `<ul class="radar-reasons">${o.motivos.map(m => `<li>${h(m)}</li>`).join('')}</ul>`;
+  const rows = c.factores.map(f => `<li><span>${h(f.nombre)}</span><strong>${f.puntos > 0 && !f.max ? '+' : ''}${h(String(f.puntos))}${f.max ? ` / ${f.max}` : ''}</strong>${f.detalle && f.detalle !== f.nombre ? `<small>${h(f.detalle)}</small>` : ''}</li>`).join('');
+  return `<div class="radar-gauge ${TONE[c.dictamen] || ''}">
+    <div class="gauge-head"><span>¿Conviene postular?</span><strong>${h(c.dictamen)} · ${h(String(c.valor))}/100</strong></div>
+    <meter min="0" max="100" low="45" high="70" optimum="100" value="${Number(c.valor) || 0}" aria-label="Conveniencia ${h(String(c.valor))} de 100: ${h(c.dictamen)}"></meter>
+    <details><summary>¿Por qué?</summary><ul class="gauge-factors">${rows}</ul><p class="radar-meta">Mide qué tanto te conviene invertir tiempo y pujas. No es la probabilidad de ganar el proyecto.</p></details>
+  </div>`;
+}
+
 function card(o, imported) {
   const link = safeLink(o.url);
   return `<article class="opportunity-card radar-card">
-  <div class="card-top"><span class="category-icon">${icon('compass')}</span><div><span class="category">${h(o.categoria_app)}</span><span class="source">${h(o.fuente_nombre)} · ${h(ago(o.publicado))}</span></div><span class="radar-score" title="Puntaje del radar">${h(String(o.puntaje))}</span></div>
+  <div class="card-top"><span class="category-icon">${icon('compass')}</span><div><span class="category">${h(o.categoria_app)}</span><span class="source">${h(o.fuente_nombre)} · ${h(ago(o.publicado))}</span></div></div>
   <h3>${link ? `<a href="${h(link)}" target="_blank" rel="noopener noreferrer">${h(o.titulo)}</a>` : h(o.titulo)}</h3>
   <p class="card-description">${h((o.descripcion || '').slice(0, 220))}</p>
   <div class="card-tags">${o.nueva ? badge('Nueva', 'amber', 'spark') : ''}${o.lineas.map(l => badge(l, 'neutral')).join('')}</div>
-  <ul class="radar-reasons">${o.motivos.map(m => `<li>${h(m)}</li>`).join('')}</ul>
+  ${gauge(o)}
   <div class="card-data"><div><span>Presupuesto</span><strong>${h(budgetText(o.presupuesto))}</strong></div><div><span>Empresa</span><strong>${h(o.empresa || 'No indicada')}</strong></div></div>
   <div class="radar-actions">${imported ? badge('Ya está en tu tablón', 'neutral', 'check') : button('Llevar al tablón', 'radar-import', 'plus', 'primary', `data-id="${h(o.id)}"`)}${link ? `<a class="btn secondary" href="${h(link)}" target="_blank" rel="noopener noreferrer">${icon('link')}<span>Ver fuente</span></a>` : ''}</div>
 </article>`;
 }
 
-export function radarSection(s) {
+export function radarSection(s, ui = {}) {
   if (status === 'idle' || status === 'loading') return `<section class="radar" aria-busy="true"><p class="radar-meta">Cargando el radar…</p></section>`;
   if (status === 'error') return `<section class="radar">${notice(`No se pudo leer el radar (${error}). Tus datos no se ven afectados.`, 'warning', 'Radar no disponible')}${button('Reintentar', 'radar-reload', 'refresh', 'secondary')}</section>`;
   const urls = new Set(s.opportunities.map(o => o.url).filter(Boolean));
   const ok = feed.fuentes.filter(f => f.estado === 'ok').length;
   const failed = feed.fuentes.filter(f => f.estado !== 'ok');
-  const rows = feed.ofertas.slice(0, 12);
+  const names = [...new Set(feed.ofertas.map(o => o.fuente_nombre))].sort((a, b) => a.localeCompare(b, 'es'));
+  const pick = names.includes(ui.radarSource) ? ui.radarSource : '';
+  const all = pick ? feed.ofertas.filter(o => o.fuente_nombre === pick) : feed.ofertas;
+  const rows = all.slice(0, 12);
+  const counts = n => feed.ofertas.filter(o => o.fuente_nombre === n).length;
+  const filter = `<label class="filter-select radar-filter">${icon('filter')}<select id="radar-source" aria-label="Filtrar el radar por fuente"><option value="">Todas las fuentes (${feed.ofertas.length})</option>${names.map(n => `<option value="${h(n)}" ${n === pick ? 'selected' : ''}>${h(n)} (${counts(n)})</option>`).join('')}</select></label>`;
   return `<section class="radar" aria-labelledby="radar-title">
   <div class="radar-head"><h2 id="radar-title">${icon('compass')} Radar diario</h2><p class="radar-meta">Actualizado ${h(ago(feed.generado))} · ${feed.ofertas.length} de ${feed.total_revisadas} ofertas pasaron los filtros · fuentes ${ok}/${feed.fuentes.length}</p></div>
+  ${names.length > 1 ? filter : ''}
   ${failed.length ? notice(`Sin respuesta hoy: ${failed.map(f => f.fuente).join(', ')}. Una fuente caída no significa cero oportunidades.`, 'warning') : ''}
   ${rows.length ? `<div class="card-grid">${rows.map(o => card(o, urls.has(safeLink(o.url)))).join('')}</div>` : notice('Hoy ninguna oferta pasó los filtros. Revisa Explorar o vuelve mañana.', 'info', 'Sin ofertas nuevas')}
+  ${all.length > rows.length ? `<p class="radar-meta">Mostrando ${rows.length} de ${all.length}. Las demás son menos convenientes.</p>` : ''}
   <p class="radar-meta">${h(feed.aviso)}</p>
 </section>`;
 }
