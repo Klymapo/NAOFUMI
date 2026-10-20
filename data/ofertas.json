@@ -1,6 +1,6 @@
 {
  "version": 1,
- "generado": "2026-10-20T18:51:45.864466+00:00",
+ "generado": "2026-10-20T18:57:50.428508+00:00",
  "ventana_horas": 72,
  "fuentes": [
   {
@@ -16,7 +16,7 @@
    "estado": "ok",
    "recibidas": 99,
    "error": null,
-   "segundos": 0.4,
+   "segundos": 0.8,
    "aceptadas": 0
   },
   {
@@ -24,7 +24,7 @@
    "estado": "ok",
    "recibidas": 100,
    "error": null,
-   "segundos": 0.4,
+   "segundos": 0.3,
    "aceptadas": 0
   },
   {
@@ -32,15 +32,15 @@
    "estado": "ok",
    "recibidas": 155,
    "error": null,
-   "segundos": 0.8,
+   "segundos": 0.7,
    "aceptadas": 1
   },
   {
    "fuente": "freelancer",
    "estado": "ok",
-   "recibidas": 220,
+   "recibidas": 221,
    "error": null,
-   "segundos": 3.3,
+   "segundos": 3.0,
    "aceptadas": 59
   }
  ],
@@ -59,7 +59,7 @@
   "lista negra (betting)": 1,
   "lista negra (adult)": 1
  },
- "total_revisadas": 584,
+ "total_revisadas": 585,
  "ofertas": [
   {
    "fuente": "freelancer",
@@ -83,7 +83,7 @@
     "usd_max": 50.0
    },
    "local": false,
-   "competencia": 24,
+   "competencia": 25,
    "id": "5368d0979434d209",
    "lineas": [
     "Redacción y edición"
@@ -127,7 +127,7 @@
       "nombre": "Competencia",
       "puntos": 6,
       "max": 10,
-      "detalle": "24 propuestas enviadas hasta ahora"
+      "detalle": "25 propuestas enviadas hasta ahora"
      },
      {
       "nombre": "Valora español",
@@ -142,10 +142,10 @@
     "Publicada hace 2 h",
     "Pago neto estimado ≈ US$45/h",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "24 propuestas enviadas hasta ahora",
+    "25 propuestas enviadas hasta ahora",
     "Valora español (ventaja tuya)"
    ],
-   "edad_horas": 2.1,
+   "edad_horas": 2.2,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -171,7 +171,7 @@
     "usd_max": 750.0
    },
    "local": false,
-   "competencia": 59,
+   "competencia": 72,
    "id": "7c37cd4c0f0d51b6",
    "lineas": [
     "Datos y BI"
@@ -218,7 +218,7 @@
       "nombre": "Competencia",
       "puntos": 0,
       "max": 10,
-      "detalle": "59 propuestas enviadas hasta ahora"
+      "detalle": "72 propuestas enviadas hasta ahora"
      }
     ]
    },
@@ -227,11 +227,11 @@
     "Publicada hace 0 h",
     "Pago neto estimado ≈ US$675 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "59 propuestas enviadas hasta ahora"
+    "72 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 0.1,
+   "edad_horas": 0.2,
    "descubierto": "2026-10-20T18:51:45.864466+00:00",
-   "nueva": true
+   "nueva": false
   },
   {
    "fuente": "freelancer",
@@ -312,7 +312,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "147 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 18.9,
+   "edad_horas": 19.0,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -401,7 +401,7 @@
     "22 propuestas enviadas hasta ahora",
     "Valora español (ventaja tuya)"
    ],
-   "edad_horas": 3.9,
+   "edad_horas": 4.0,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -483,7 +483,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "18 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 2.2,
+   "edad_horas": 2.3,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -563,7 +563,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "10 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 1.8,
+   "edad_horas": 1.9,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -643,7 +643,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "2 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 2.2,
+   "edad_horas": 2.3,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -724,7 +724,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "75 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 4.4,
+   "edad_horas": 4.5,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -750,7 +750,7 @@
     "usd_max": 1584.0
    },
    "local": false,
-   "competencia": 65,
+   "competencia": 66,
    "id": "1bffff8ccfbc7aa8",
    "lineas": [
     "Automatización Python"
@@ -793,7 +793,7 @@
       "nombre": "Competencia",
       "puntos": 0,
       "max": 10,
-      "detalle": "65 propuestas enviadas hasta ahora"
+      "detalle": "66 propuestas enviadas hasta ahora"
      }
     ]
    },
@@ -802,9 +802,9 @@
     "Publicada hace 1 h",
     "Pago neto estimado ≈ US$1426 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "65 propuestas enviadas hasta ahora"
+    "66 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 1.2,
+   "edad_horas": 1.3,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -883,7 +883,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "30 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 1.8,
+   "edad_horas": 1.9,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -909,7 +909,7 @@
     "usd_max": 750.0
    },
    "local": false,
-   "competencia": 73,
+   "competencia": 74,
    "id": "79d15f025a77623d",
    "lineas": [
     "Datos y BI"
@@ -952,7 +952,7 @@
       "nombre": "Competencia",
       "puntos": 0,
       "max": 10,
-      "detalle": "73 propuestas enviadas hasta ahora"
+      "detalle": "74 propuestas enviadas hasta ahora"
      }
     ]
    },
@@ -961,9 +961,9 @@
     "Publicada hace 11 h",
     "Pago neto estimado ≈ US$675 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "73 propuestas enviadas hasta ahora"
+    "74 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 10.6,
+   "edad_horas": 10.7,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -989,7 +989,7 @@
     "usd_max": 334.62
    },
    "local": false,
-   "competencia": 222,
+   "competencia": 223,
    "id": "ec05681fc097bbaa",
    "lineas": [
     "Automatización Python"
@@ -1015,7 +1015,7 @@
       "nombre": "Frescura",
       "puntos": 15,
       "max": 15,
-      "detalle": "Publicada hace 1 h"
+      "detalle": "Publicada hace 2 h"
      },
      {
       "nombre": "Pago",
@@ -1033,18 +1033,18 @@
       "nombre": "Competencia",
       "puntos": 0,
       "max": 10,
-      "detalle": "222 propuestas enviadas hasta ahora"
+      "detalle": "223 propuestas enviadas hasta ahora"
      }
     ]
    },
    "motivos": [
     "Encaja con Automatización Python: batch, python, scraper",
-    "Publicada hace 1 h",
+    "Publicada hace 2 h",
     "Pago neto estimado ≈ US$301 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "222 propuestas enviadas hasta ahora"
+    "223 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 1.4,
+   "edad_horas": 1.5,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -1124,7 +1124,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "68 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 8.6,
+   "edad_horas": 8.7,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -1205,7 +1205,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "42 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 5.1,
+   "edad_horas": 5.2,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -1231,7 +1231,7 @@
     "usd_max": 750.0
    },
    "local": false,
-   "competencia": 79,
+   "competencia": 80,
    "id": "ed9c8d9a81bf9e9a",
    "lineas": [
     "Datos y BI"
@@ -1276,7 +1276,7 @@
       "nombre": "Competencia",
       "puntos": 0,
       "max": 10,
-      "detalle": "79 propuestas enviadas hasta ahora"
+      "detalle": "80 propuestas enviadas hasta ahora"
      }
     ]
    },
@@ -1285,9 +1285,9 @@
     "Publicada hace 2 h",
     "Pago neto estimado ≈ US$675 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "79 propuestas enviadas hasta ahora"
+    "80 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 2.1,
+   "edad_horas": 2.2,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -1342,7 +1342,7 @@
       "nombre": "Frescura",
       "puntos": 15,
       "max": 15,
-      "detalle": "Publicada hace 15 h"
+      "detalle": "Publicada hace 16 h"
      },
      {
       "nombre": "Pago",
@@ -1366,12 +1366,12 @@
    },
    "motivos": [
     "Encaja con Datos y BI: analytics, csv, dashboard, database",
-    "Publicada hace 15 h",
+    "Publicada hace 16 h",
     "Pago neto estimado ≈ US$675 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "101 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 15.4,
+   "edad_horas": 15.5,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -1397,7 +1397,7 @@
     "usd_max": 250.0
    },
    "local": false,
-   "competencia": 102,
+   "competencia": 109,
    "id": "901aec4a848fa2f1",
    "lineas": [
     "Datos y BI",
@@ -1443,7 +1443,7 @@
       "nombre": "Competencia",
       "puntos": 0,
       "max": 10,
-      "detalle": "102 propuestas enviadas hasta ahora"
+      "detalle": "109 propuestas enviadas hasta ahora"
      }
     ]
    },
@@ -1452,9 +1452,9 @@
     "Publicada hace 0 h",
     "Pago neto estimado ≈ US$225 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "102 propuestas enviadas hasta ahora"
+    "109 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 0.2,
+   "edad_horas": 0.3,
    "descubierto": "2026-10-20T18:44:00.471440+00:00",
    "nueva": false
   },
@@ -1541,7 +1541,7 @@
     "23 propuestas enviadas hasta ahora",
     "Valora español (ventaja tuya)"
    ],
-   "edad_horas": 10.6,
+   "edad_horas": 10.7,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -1621,7 +1621,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "32 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 12.4,
+   "edad_horas": 12.5,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -1704,7 +1704,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "38 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 12.8,
+   "edad_horas": 12.9,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -1784,9 +1784,89 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "36 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 7.0,
+   "edad_horas": 7.1,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
+  },
+  {
+   "fuente": "freelancer",
+   "fuente_nombre": "Freelancer.com",
+   "fuente_url": "https://www.freelancer.com",
+   "id_externo": "40778310",
+   "url": "https://www.freelancer.com/projects/amazon-web-services/AWS-Docker-DevOps-Automation",
+   "titulo": "AWS & Docker DevOps Automation",
+   "empresa": "",
+   "descripcion": "I am refreshing our entire AWS environment and need an experienced DevOps engineer to jump in and tighten up every stage of the pipeline—especially around Docker container deployment. While the estate already runs on EC2, S3, RDS, IAM-controlled VPCs and stores images in ECR, the day-to-day flow is hitting bottlenecks once the containers leave Jenkins. Here is what I expect to accomplish together: • Optimise existing Dockerfiles and build stages so images stay small, fast and secure, then push them cleanly to ECR. • Orchestrate containers reliably (whether that ends up being ECS, EKS, or a wel",
+   "publicado": "2026-10-20T18:56:10+00:00",
+   "tipo": "freelance hourly",
+   "ubicacion": "remote",
+   "idioma": "en",
+   "presupuesto": {
+    "min": 750.0,
+    "max": 1250.0,
+    "moneda": "INR",
+    "periodo": "hora",
+    "usd_min": 7.92,
+    "usd_max": 13.2
+   },
+   "local": false,
+   "competencia": 6,
+   "id": "ba96c80a469f9d76",
+   "lineas": [
+    "Automatización Python"
+   ],
+   "categoria_app": "Automatización",
+   "coincidencias": [
+    "automate",
+    "automation"
+   ],
+   "puntaje": 54,
+   "conveniencia": {
+    "valor": 54,
+    "dictamen": "Revisar",
+    "factores": [
+     {
+      "nombre": "Encaje con tu catálogo",
+      "puntos": 12,
+      "max": 35,
+      "detalle": ""
+     },
+     {
+      "nombre": "Frescura",
+      "puntos": 15,
+      "max": 15,
+      "detalle": "Publicada hace 0 h"
+     },
+     {
+      "nombre": "Pago",
+      "puntos": 10,
+      "max": 25,
+      "detalle": "Pago neto estimado ≈ US$12/h"
+     },
+     {
+      "nombre": "Costo de postular",
+      "puntos": 7,
+      "max": 15,
+      "detalle": "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5"
+     },
+     {
+      "nombre": "Competencia",
+      "puntos": 10,
+      "max": 10,
+      "detalle": "6 propuestas enviadas hasta ahora"
+     }
+    ]
+   },
+   "motivos": [
+    "Encaja con Automatización Python: automate, automation",
+    "Publicada hace 0 h",
+    "Pago neto estimado ≈ US$12/h",
+    "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
+    "6 propuestas enviadas hasta ahora"
+   ],
+   "edad_horas": 0.0,
+   "descubierto": "2026-10-20T18:57:50.428508+00:00",
+   "nueva": true
   },
   {
    "fuente": "freelancer",
@@ -1870,7 +1950,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "15 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 7.5,
+   "edad_horas": 7.6,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -1951,7 +2031,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "64 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 1.8,
+   "edad_horas": 1.9,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -2031,7 +2111,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "179 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 13.3,
+   "edad_horas": 13.4,
    "descubierto": "2026-10-20T17:46:53.523309+00:00",
    "nueva": false
   },
@@ -2057,7 +2137,7 @@
     "usd_max": 750.0
    },
    "local": false,
-   "competencia": 389,
+   "competencia": 395,
    "id": "227ed5b9f3606d6b",
    "lineas": [
     "Automatización Python"
@@ -2100,7 +2180,7 @@
       "nombre": "Competencia",
       "puntos": 0,
       "max": 10,
-      "detalle": "389 propuestas enviadas hasta ahora"
+      "detalle": "395 propuestas enviadas hasta ahora"
      }
     ]
    },
@@ -2109,9 +2189,9 @@
     "Publicada hace 3 h",
     "Pago neto estimado ≈ US$675 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "389 propuestas enviadas hasta ahora"
+    "395 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 3.0,
+   "edad_horas": 3.1,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -2191,7 +2271,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "63 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 4.0,
+   "edad_horas": 4.1,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -2217,7 +2297,7 @@
     "usd_max": 250.0
    },
    "local": false,
-   "competencia": 114,
+   "competencia": 115,
    "id": "8258b75d34e844f2",
    "lineas": [
     "Automatización Python"
@@ -2260,7 +2340,7 @@
       "nombre": "Competencia",
       "puntos": 0,
       "max": 10,
-      "detalle": "114 propuestas enviadas hasta ahora"
+      "detalle": "115 propuestas enviadas hasta ahora"
      }
     ]
    },
@@ -2269,9 +2349,9 @@
     "Publicada hace 25 h",
     "Pago neto estimado ≈ US$225 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "114 propuestas enviadas hasta ahora"
+    "115 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 25.2,
+   "edad_horas": 25.3,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -2352,7 +2432,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "77 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 2.7,
+   "edad_horas": 2.8,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -2433,7 +2513,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "8 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 7.8,
+   "edad_horas": 7.9,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -2520,7 +2600,7 @@
     "121 propuestas enviadas hasta ahora",
     "Valora español (ventaja tuya)"
    ],
-   "edad_horas": 4.1,
+   "edad_horas": 4.2,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -2546,7 +2626,7 @@
     "usd_max": 750.0
    },
    "local": false,
-   "competencia": 87,
+   "competencia": 91,
    "id": "23f8e1162a1b12cb",
    "lineas": [
     "Datos y BI"
@@ -2589,7 +2669,7 @@
       "nombre": "Competencia",
       "puntos": 0,
       "max": 10,
-      "detalle": "87 propuestas enviadas hasta ahora"
+      "detalle": "91 propuestas enviadas hasta ahora"
      }
     ]
    },
@@ -2598,9 +2678,9 @@
     "Publicada hace 1 h",
     "Pago neto estimado ≈ US$675 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "87 propuestas enviadas hasta ahora"
+    "91 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 1.0,
+   "edad_horas": 1.1,
    "descubierto": "2026-10-20T17:53:31.463414+00:00",
    "nueva": false
   },
@@ -2683,7 +2763,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "156 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 2.9,
+   "edad_horas": 3.0,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -2763,7 +2843,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "88 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 7.9,
+   "edad_horas": 8.0,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -2843,7 +2923,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "323 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 9.2,
+   "edad_horas": 9.3,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -2923,7 +3003,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "252 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 10.9,
+   "edad_horas": 11.0,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -3003,7 +3083,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "87 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 13.1,
+   "edad_horas": 13.2,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -3029,7 +3109,7 @@
     "usd_max": 750.0
    },
    "local": false,
-   "competencia": 82,
+   "competencia": 83,
    "id": "62f9c84fbf3581a0",
    "lineas": [
     "Datos y BI"
@@ -3072,7 +3152,7 @@
       "nombre": "Competencia",
       "puntos": 0,
       "max": 10,
-      "detalle": "82 propuestas enviadas hasta ahora"
+      "detalle": "83 propuestas enviadas hasta ahora"
      }
     ]
    },
@@ -3081,9 +3161,9 @@
     "Publicada hace 4 h",
     "Pago neto estimado ≈ US$675 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "82 propuestas enviadas hasta ahora"
+    "83 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 4.4,
+   "edad_horas": 4.5,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -3163,7 +3243,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "67 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 4.6,
+   "edad_horas": 4.7,
    "descubierto": "2026-10-20T18:01:18.192840+00:00",
    "nueva": false
   },
@@ -3243,7 +3323,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "23 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 10.7,
+   "edad_horas": 10.8,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -3316,7 +3396,7 @@
     "Postulación directa, sin costo",
     "Competencia desconocida"
    ],
-   "edad_horas": 40.0,
+   "edad_horas": 40.1,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -3342,7 +3422,7 @@
     "usd_max": 132.0
    },
    "local": false,
-   "competencia": 13,
+   "competencia": 15,
    "id": "be1aadec233b685b",
    "lineas": [
     "Datos y BI"
@@ -3386,7 +3466,7 @@
       "nombre": "Competencia",
       "puntos": 6,
       "max": 10,
-      "detalle": "13 propuestas enviadas hasta ahora"
+      "detalle": "15 propuestas enviadas hasta ahora"
      }
     ]
    },
@@ -3395,9 +3475,9 @@
     "Publicada hace 0 h",
     "Pago neto estimado ≈ US$119 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "13 propuestas enviadas hasta ahora"
+    "15 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 0.4,
+   "edad_horas": 0.5,
    "descubierto": "2026-10-20T18:44:00.471440+00:00",
    "nueva": false
   },
@@ -3423,7 +3503,7 @@
     "usd_max": null
    },
    "local": false,
-   "competencia": 28,
+   "competencia": 29,
    "id": "03bd248fbad006b4",
    "lineas": [
     "Datos y BI"
@@ -3466,7 +3546,7 @@
       "nombre": "Competencia",
       "puntos": 3,
       "max": 10,
-      "detalle": "28 propuestas enviadas hasta ahora"
+      "detalle": "29 propuestas enviadas hasta ahora"
      }
     ]
    },
@@ -3475,9 +3555,9 @@
     "Publicada hace 6 h",
     "Pago neto estimado ≈ US$24/h",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "28 propuestas enviadas hasta ahora"
+    "29 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 6.1,
+   "edad_horas": 6.2,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -3557,7 +3637,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "11 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 7.1,
+   "edad_horas": 7.2,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -3583,7 +3663,7 @@
     "usd_max": 250.0
    },
    "local": false,
-   "competencia": 81,
+   "competencia": 82,
    "id": "892520069346fdd9",
    "lineas": [
     "Automatización Python"
@@ -3626,7 +3706,7 @@
       "nombre": "Competencia",
       "puntos": 0,
       "max": 10,
-      "detalle": "81 propuestas enviadas hasta ahora"
+      "detalle": "82 propuestas enviadas hasta ahora"
      }
     ]
    },
@@ -3635,9 +3715,9 @@
     "Publicada hace 3 h",
     "Pago neto estimado ≈ US$225 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "81 propuestas enviadas hasta ahora"
+    "82 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 2.6,
+   "edad_horas": 2.7,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -3716,7 +3796,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "57 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 12.7,
+   "edad_horas": 12.8,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -3796,7 +3876,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "44 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 27.7,
+   "edad_horas": 27.8,
    "descubierto": "2026-10-20T18:01:18.192840+00:00",
    "nueva": false
   },
@@ -3822,7 +3902,7 @@
     "usd_max": 250.0
    },
    "local": false,
-   "competencia": 118,
+   "competencia": 119,
    "id": "63f5ab4d54731877",
    "lineas": [
     "Automatización Python"
@@ -3866,7 +3946,7 @@
       "nombre": "Competencia",
       "puntos": 0,
       "max": 10,
-      "detalle": "118 propuestas enviadas hasta ahora"
+      "detalle": "119 propuestas enviadas hasta ahora"
      }
     ]
    },
@@ -3875,9 +3955,9 @@
     "Publicada hace 2 h",
     "Pago neto estimado ≈ US$225 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "118 propuestas enviadas hasta ahora"
+    "119 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 2.3,
+   "edad_horas": 2.4,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -3903,7 +3983,7 @@
     "usd_max": 25.0
    },
    "local": false,
-   "competencia": 58,
+   "competencia": 59,
    "id": "ceb7b0194dbc1814",
    "lineas": [
     "Automatización Python"
@@ -3948,7 +4028,7 @@
       "nombre": "Competencia",
       "puntos": 0,
       "max": 10,
-      "detalle": "58 propuestas enviadas hasta ahora"
+      "detalle": "59 propuestas enviadas hasta ahora"
      }
     ]
    },
@@ -3957,9 +4037,9 @@
     "Publicada hace 2 h",
     "Pago neto estimado ≈ US$22/h",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "58 propuestas enviadas hasta ahora"
+    "59 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 1.7,
+   "edad_horas": 1.8,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -4011,7 +4091,7 @@
       "nombre": "Frescura",
       "puntos": 15,
       "max": 15,
-      "detalle": "Publicada hace 2 h"
+      "detalle": "Publicada hace 3 h"
      },
      {
       "nombre": "Pago",
@@ -4035,12 +4115,12 @@
    },
    "motivos": [
     "Encaja con Narrativa y guion: dialogue, story, storytelling",
-    "Publicada hace 2 h",
+    "Publicada hace 3 h",
     "Pago neto estimado ≈ US$225 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "43 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 2.5,
+   "edad_horas": 2.6,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -4120,7 +4200,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "6 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 7.7,
+   "edad_horas": 7.8,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -4203,7 +4283,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "30 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 5.3,
+   "edad_horas": 5.4,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -4283,7 +4363,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "23 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 2.6,
+   "edad_horas": 2.7,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -4366,7 +4446,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "44 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 27.8,
+   "edad_horas": 27.9,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -4455,7 +4535,7 @@
     "43 propuestas enviadas hasta ahora",
     "Pide perfil senior"
    ],
-   "edad_horas": 10.8,
+   "edad_horas": 10.9,
    "descubierto": "2026-10-20T18:01:18.192840+00:00",
    "nueva": false
   },
@@ -4507,7 +4587,7 @@
       "nombre": "Frescura",
       "puntos": 15,
       "max": 15,
-      "detalle": "Publicada hace 5 h"
+      "detalle": "Publicada hace 6 h"
      },
      {
       "nombre": "Pago",
@@ -4531,12 +4611,12 @@
    },
    "motivos": [
     "Encaja con Redacción y edición: content creation, copywriting, editing",
-    "Publicada hace 5 h",
+    "Publicada hace 6 h",
     "Pago neto estimado ≈ US$119 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "11 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 5.5,
+   "edad_horas": 5.6,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -4616,7 +4696,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "65 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 19.2,
+   "edad_horas": 19.3,
    "descubierto": "2026-10-20T18:01:18.192840+00:00",
    "nueva": false
   },
@@ -4667,7 +4747,7 @@
       "nombre": "Frescura",
       "puntos": 15,
       "max": 15,
-      "detalle": "Publicada hace 4 h"
+      "detalle": "Publicada hace 5 h"
      },
      {
       "nombre": "Pago",
@@ -4691,93 +4771,12 @@
    },
    "motivos": [
     "Encaja con Datos y BI: dashboard, database",
-    "Publicada hace 4 h",
+    "Publicada hace 5 h",
     "Pago neto estimado ≈ US$119 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "66 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 4.4,
-   "descubierto": "2026-10-20T17:43:37.394449+00:00",
-   "nueva": false
-  },
-  {
-   "fuente": "freelancer",
-   "fuente_nombre": "Freelancer.com",
-   "fuente_url": "https://www.freelancer.com",
-   "id_externo": "40776431",
-   "url": "https://www.freelancer.com/projects/google-sheets/Data-Entry-Web-Contact-Form",
-   "titulo": "Data Entry & Web Contact Form Outreach – Copy & Paste Task",
-   "empresa": "",
-   "descripcion": "We are looking for a reliable freelancer to assist with web form submissions . This is a simple, straightforward copy-and-paste task with no cold calling or custom copywriting required. Your Responsibilities: - Visit a provided list of local business websites. - Locate their \"Contact Us\" or inquiry forms. - Copy and paste our pre-written message into the form (inserting the correct business name where indicated). - Log completed submissions in a simple Google Tracking Sheet. Requirements: - High attention to detail and accuracy. - Basic familiarity with Google Sheets or MS Excel. - Reliable in",
-   "publicado": "2026-10-19T18:57:06+00:00",
-   "tipo": "freelance fixed",
-   "ubicacion": "remote",
-   "idioma": "en",
-   "presupuesto": {
-    "min": 10.0,
-    "max": 100.0,
-    "moneda": "USD",
-    "periodo": "proyecto",
-    "usd_min": 10.0,
-    "usd_max": 100.0
-   },
-   "local": false,
-   "competencia": 193,
-   "id": "bcab14473e19a357",
-   "lineas": [
-    "Datos y BI"
-   ],
-   "categoria_app": "Datos y Excel",
-   "coincidencias": [
-    "data entry",
-    "excel",
-    "google sheets"
-   ],
-   "puntaje": 43,
-   "conveniencia": {
-    "valor": 43,
-    "dictamen": "No conviene",
-    "factores": [
-     {
-      "nombre": "Encaje con tu catálogo",
-      "puntos": 9,
-      "max": 35,
-      "detalle": ""
-     },
-     {
-      "nombre": "Frescura",
-      "puntos": 15,
-      "max": 15,
-      "detalle": "Publicada hace 24 h"
-     },
-     {
-      "nombre": "Pago",
-      "puntos": 12,
-      "max": 25,
-      "detalle": "Pago neto estimado ≈ US$90 por proyecto (tope del rango, menos comisión)"
-     },
-     {
-      "nombre": "Costo de postular",
-      "puntos": 7,
-      "max": 15,
-      "detalle": "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5"
-     },
-     {
-      "nombre": "Competencia",
-      "puntos": 0,
-      "max": 10,
-      "detalle": "193 propuestas enviadas hasta ahora"
-     }
-    ]
-   },
-   "motivos": [
-    "Encaja con Datos y BI: data entry, excel, google sheets",
-    "Publicada hace 24 h",
-    "Pago neto estimado ≈ US$90 por proyecto (tope del rango, menos comisión)",
-    "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
-    "193 propuestas enviadas hasta ahora"
-   ],
-   "edad_horas": 23.9,
+   "edad_horas": 4.6,
    "descubierto": "2026-10-20T17:43:37.394449+00:00",
    "nueva": false
   },
@@ -4828,7 +4827,7 @@
       "nombre": "Frescura",
       "puntos": 15,
       "max": 15,
-      "detalle": "Publicada hace 4 h"
+      "detalle": "Publicada hace 5 h"
      },
      {
       "nombre": "Pago",
@@ -4852,12 +4851,12 @@
    },
    "motivos": [
     "Encaja con Automatización Python: automate, script",
-    "Publicada hace 4 h",
+    "Publicada hace 5 h",
     "Pago neto estimado ≈ US$119 por proyecto (tope del rango, menos comisión)",
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "45 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 4.4,
+   "edad_horas": 4.5,
    "descubierto": "2026-10-20T18:07:49.031464+00:00",
    "nueva": false
   },
@@ -4940,7 +4939,7 @@
     "Pujar gasta 1 de 6 pujas gratis al mes y requiere US$20 de saldo; comisión 10 % o US$5",
     "36 propuestas enviadas hasta ahora"
    ],
-   "edad_horas": 58.3,
+   "edad_horas": 58.4,
    "descubierto": "2026-10-20T18:07:49.031464+00:00",
    "nueva": false
   }
