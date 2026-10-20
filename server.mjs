@@ -11,7 +11,7 @@ const mime = {
   '.json': 'application/json',
   '.webmanifest': 'application/manifest+json'
 };
-const policy = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'";
+const policy = "default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; font-src 'self'; connect-src 'self'; worker-src 'self'; manifest-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'";
 const server = http.createServer(async (req, res) => {
   res.setHeader('Content-Security-Policy', policy);
   res.setHeader('X-Content-Type-Options', 'nosniff');
@@ -31,7 +31,7 @@ const server = http.createServer(async (req, res) => {
     return;
   }
   if (pathname === '/') pathname = '/index.html';
-  if (!(/^\/(index\.html|styles\.css|manifest\.webmanifest)$/.test(pathname) || /^\/(src|assets)\/[\w/.-]+$/.test(pathname)) || pathname.includes('..')) {
+  if (!(/^\/(index\.html|styles\.css|manifest\.webmanifest|sw\.js)$/.test(pathname) || /^\/(src|assets|data)\/[\w/.-]+$/.test(pathname)) || pathname.includes('..')) {
     res.writeHead(404);
     res.end('No encontrado');
     return;

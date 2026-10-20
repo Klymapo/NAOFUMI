@@ -73,3 +73,18 @@ Migrado el 2026-10-20 desde el respaldo `NAOFUMI_RESPALDO_COMPLETO_V02_2026-10-1
 - `docs/respaldo-drive/`: índice y manifiesto SHA-256 del ZIP original. Las rutas del manifiesto son las del ZIP, no las de este repo.
 
 El **reporte maestro** sigue en Drive (Google Doc `NAOFUMI — REPORTE MAESTRO`) y es la fuente de verdad del proyecto y de su Registro de cambios.
+
+## Radar diario (fase 1, 2026-10-20)
+
+Cada mañana (06:47, hora de CDMX) GitHub Actions ejecuta `radar/run.py`:
+
+1. Consulta fuentes públicas gratis: Remotive, Remote OK, Himalayas, Jobicy, Freelancer.com, Hacker News («Seeking freelancer») y Reddit (r/forhire, r/HireaWriter).
+2. Filtra en cascada: 72 h máximo, solo 100 % remoto, solo freelance o contrato, regiones compatibles con México, español o inglés, lista negra y encaje con el catálogo.
+3. Asigna puntaje sin IA (encaje, frescura, presupuesto, seniority, español), elimina duplicados y escribe `data/ofertas.json`.
+4. Publica la app en GitHub Pages. El Tablón muestra el «Radar diario» y el botón «Llevar al tablón» copia la oferta a tu espacio local.
+
+- Filtros y catálogo: `radar/config.json`. Se editan sin tocar código.
+- Pruebas: `python -m unittest radar/test_radar.py`.
+- Si una fuente falla, el resto sigue y el radar lo muestra. Una fuente caída no significa cero oportunidades.
+- Atribución: cada tarjeta enlaza a la publicación original y nombra su fuente.
+- Ninguna oferta se verifica manualmente. Revisa la fuente antes de postular. NAOFUMI no postula, no envía mensajes y no gasta nada.

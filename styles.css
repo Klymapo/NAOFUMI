@@ -2770,3 +2770,13 @@ h1,h2,h3,strong,.grow { overflow-wrap:anywhere; }
 .journey-copy .btn { min-height:44px; }
 .journal p:not(.eyebrow),.sidebar-version,.breadcrumb>span { color:#59694f; }
 .local-card>span { color:#755e2a; }
+
+/* ---- Radar diario ---- */
+.radar { display: grid; gap: 12px; margin: 16px 0 24px; padding: 16px; border: 1px solid var(--border); border-radius: 16px; background: var(--panel); }
+.radar-head h2 { display: flex; align-items: center; gap: 8px; margin: 0; font-size: 1.15rem; }
+.radar-meta { margin: 0; font-size: .85rem; opacity: .8; }
+.radar-score { margin-left: auto; min-width: 2.5rem; padding: 4px 8px; border-radius: 999px; text-align: center; font-weight: 700; background: var(--pine-light); }
+.radar-reasons { margin: 0; padding-left: 1.1rem; font-size: .85rem; display: grid; gap: 2px; }
+.radar-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.radar-actions .btn { min-height: 44px; }
+.radar-card h3 a { overflow-wrap: anywhere; }

@@ -1,0 +1,57 @@
+name: Radar diario
+
+on:
+  schedule:
+    - cron: "47 12 * * *"   # 06:47 en CDMX (UTC-6)
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ["radar/**", "src/**", "index.html", "styles.css", "sw.js", "manifest.webmanifest", "assets/**", ".github/workflows/radar.yml"]
+
+concurrency:
+  group: radar
+  cancel-in-progress: false
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Pruebas del radar
+        run: python -m unittest radar/test_radar.py
+      - name: Recolectar y filtrar
+        run: python radar/run.py --salida data
+      - name: Guardar resultados
+        run: |
+          git config user.name "naofumi-radar[bot]"
+          git config user.email "Klymapo@users.noreply.github.com"
+          git add data/ofertas.json data/historial.json
+          if git diff --cached --quiet; then echo "Sin cambios"; exit 0; fi
+          git commit -m "Radar: resultados del $(TZ=America/Mexico_City date +%F)"
+          git pull --rebase origin main
+          git push
+
+  pages:
+    needs: radar
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - id: deploy
+        uses: actions/deploy-pages@v4

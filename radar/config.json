@@ -1,0 +1,253 @@
+{
+  "_nota": "Configuración del radar de NAOFUMI. Edita aquí los filtros y el catálogo; el código no necesita cambios.",
+  "ventana_horas": 72,
+  "max_ofertas": 60,
+  "idiomas": [
+    "en",
+    "es"
+  ],
+  "tipos_permitidos": [
+    "freelance",
+    "contract",
+    "contractor",
+    "temporary",
+    "gig"
+  ],
+  "ubicaciones_permitidas": [
+    "worldwide",
+    "anywhere",
+    "global",
+    "latam",
+    "latin america",
+    "americas",
+    "north america",
+    "mexico",
+    "méxico",
+    "spanish speaking"
+  ],
+  "remoto_excluir": [
+    "on-site",
+    "onsite",
+    "on site",
+    "in-office",
+    "in office",
+    "hybrid",
+    "híbrido",
+    "hibrido",
+    "presencial",
+    "relocate",
+    "relocation"
+  ],
+  "lista_negra": [
+    "unpaid",
+    "no pay",
+    "sin pago",
+    "volunteer",
+    "voluntario",
+    "for exposure",
+    "exposure only",
+    "equity only",
+    "commission only",
+    "comisión",
+    "rev share",
+    "revenue share only",
+    "crypto",
+    "nft",
+    "web3",
+    "presale",
+    "casino",
+    "gambling",
+    "betting",
+    "onlyfans",
+    "adult",
+    "nsfw",
+    "mlm",
+    "test task unpaid",
+    "homework help",
+    "do my assignment",
+    "write my essay"
+  ],
+  "penalizar": {
+    "senior": [
+      "senior",
+      "sr.",
+      "lead ",
+      "principal",
+      "staff ",
+      "head of",
+      "director",
+      "10+ years",
+      "8+ years",
+      "7+ years"
+    ],
+    "presupuesto_bajo_usd_hora": 10,
+    "presupuesto_bajo_usd_fijo": 50
+  },
+  "lineas": {
+    "Datos y BI": {
+      "categoria_app": "Datos y Excel",
+      "fuertes": [
+        "power bi",
+        "powerbi",
+        "power query",
+        "excel",
+        "dashboard",
+        "data analyst",
+        "data analysis",
+        "análisis de datos",
+        "analista de datos",
+        "business intelligence",
+        "spreadsheet",
+        "google sheets",
+        "hoja de cálculo",
+        "tableau",
+        "looker studio",
+        "kpi",
+        "reporting",
+        "data cleaning",
+        "limpieza de datos",
+        "data visualization",
+        "visualización de datos"
+      ],
+      "debiles": [
+        "sql",
+        "data entry",
+        "captura de datos",
+        "reports",
+        "reportes",
+        "pivot",
+        "vlookup",
+        "xlookup",
+        "csv",
+        "database",
+        "analytics",
+        "metrics"
+      ]
+    },
+    "Automatización Python": {
+      "categoria_app": "Automatización",
+      "fuertes": [
+        "python",
+        "pandas",
+        "automation",
+        "automatización",
+        "automate",
+        "automatizar",
+        "etl",
+        "data pipeline",
+        "vba",
+        "excel macro",
+        "macros",
+        "apps script",
+        "web scraping",
+        "scraper"
+      ],
+      "debiles": [
+        "script",
+        "zapier",
+        "make.com",
+        "n8n",
+        "api integration",
+        "batch",
+        "file processing",
+        "pdf extraction"
+      ]
+    },
+    "Narrativa y guion": {
+      "categoria_app": "Narrativa y guion",
+      "fuertes": [
+        "narrative designer",
+        "narrative design",
+        "game writer",
+        "game writing",
+        "scriptwriter",
+        "screenwriter",
+        "guionista",
+        "guion",
+        "worldbuilding",
+        "interactive fiction",
+        "quest writer",
+        "quest design",
+        "lore writer",
+        "dialogue writer",
+        "branching dialogue",
+        "visual novel",
+        "ttrpg",
+        "story writer",
+        "storytelling"
+      ],
+      "debiles": [
+        "lore",
+        "dialogue",
+        "narrative",
+        "fiction",
+        "short story",
+        "ghostwriter",
+        "ghostwriting",
+        "story",
+        "comic script",
+        "character writer"
+      ]
+    },
+    "Redacción y edición": {
+      "categoria_app": "Redacción y edición",
+      "fuertes": [
+        "copywriter",
+        "copywriting",
+        "content writer",
+        "redactor",
+        "redacción",
+        "proofreading",
+        "proofreader",
+        "corrección de estilo",
+        "copy editor",
+        "copyediting",
+        "editor de textos",
+        "spanish translation",
+        "traducción",
+        "translator english spanish",
+        "english to spanish",
+        "spanish writer",
+        "escritor"
+      ],
+      "debiles": [
+        "blog post",
+        "articles",
+        "artículos",
+        "editing",
+        "edición",
+        "content creation",
+        "seo writing",
+        "writer",
+        "translation",
+        "spanish"
+      ]
+    }
+  },
+  "fuentes": {
+    "remotive": true,
+    "remoteok": true,
+    "himalayas": true,
+    "jobicy": true,
+    "freelancer": true,
+    "hn": true,
+    "reddit": true
+  },
+  "freelancer_busquedas": [
+    "excel",
+    "power bi",
+    "data analysis",
+    "dashboard",
+    "python automation",
+    "data cleaning",
+    "copywriting spanish",
+    "proofreading",
+    "game writer",
+    "story writer",
+    "spanish translation"
+  ],
+  "reddit_subs": [
+    "forhire",
+    "HireaWriter"
+  ]
+}

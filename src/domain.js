@@ -1,5 +1,5 @@
 export const collections = ['opportunities', 'prospects', 'proposals', 'works', 'actions', 'notifications', 'audit'];
-export const categories = ['Datos y Excel', 'Automatización', 'Investigación', 'Redacción y edición', 'Gestión de proyectos', 'Diseño y documentación'];
+export const categories = ['Datos y Excel', 'Automatización', 'Investigación', 'Redacción y edición', 'Narrativa y guion', 'Gestión de proyectos', 'Diseño y documentación'];
 export const currencies = ['MXN', 'USD', 'EUR'];
 export const workStates = {
   agreed: 'Acordado',
