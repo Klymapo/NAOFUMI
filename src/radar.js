@@ -43,6 +43,15 @@ export function animateGauges(root = document) {
   }
 }
 
+export function radarHighlights() {
+  if (!feed) return status === 'error' ? '' : `<section class="radar-highlights" aria-busy="true"><h2>Lo mejor del radar hoy</h2><span class="sk sk-line"></span><span class="sk sk-line"></span><span class="sk sk-line"></span></section>`;
+  const top = feed.ofertas.slice(0, 3);
+  if (!top.length) return '';
+  const tone = { 'Conviene': 'good', 'Revisar': 'mid', 'No conviene': 'low' };
+  return `<section class="radar-highlights"><div class="rh-head"><h2>${icon('compass')} Lo mejor del radar hoy</h2><a href="#/board" class="rh-more">Ver las ${feed.ofertas.length} ${icon('arrow')}</a></div>
+  <ol class="rh-list">${top.map(o => { const c = o.conveniencia || { valor: o.puntaje, dictamen: '' }; return `<li><a href="#/board"><span class="rh-title">${h(o.titulo)}</span><span class="rh-meta">${h(o.fuente_nombre)} · ${h(o.categoria_app)}</span><span class="rh-score ${tone[c.dictamen] || ''}">${h(c.dictamen)} · ${h(String(c.valor))}</span><meter min="0" max="100" low="45" high="70" optimum="100" value="${Number(c.valor) || 0}" aria-label="Conveniencia ${h(String(c.valor))} de 100"></meter></a></li>`; }).join('')}</ol></section>`;
+}
+
 export const radarOffer = id => feed?.ofertas.find(o => o.id === id) || null;
 
 function ago(iso) {

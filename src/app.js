@@ -7,6 +7,7 @@ import { missions } from './views/missions.js';
 import { opportunityDetail, proposalDetail, workDetail } from './views/detail.js';
 import { profile, settings, sources, states, archive, help } from './views/settings.js';
 import { formFor } from './forms.js';
+import { decodeImport } from './importar.js';
 import { loadRadar, radarOffer, toOpportunity, radarAge, animateGauges } from './radar.js';
 const APP_VERSION = 'V0.3';
 const root = document.querySelector('#app'),
@@ -139,6 +140,27 @@ function render({
     window.scrollTo(0, focus.scroll);
   }
   animateGauges(root);
+}
+function handleImport() {
+  const m = location.hash.match(/^#\/importar\/([A-Za-z0-9_-]+)$/);
+  if (!m) return false;
+  try {
+    const data = decodeImport(m[1]);
+    if (store.getSpace() !== 'personal') store.switchSpace('personal');
+    const s = store.getState();
+    const dup = s.prospects.some(p => !p.archivedAt && p.title === data.title);
+    if (!dup) store.dispatch({ type: 'prospect.add', data });
+    history.replaceState(null, '', '#/explore');
+    currentHash = '#/explore';
+    render();
+    toast(dup ? 'Ese negocio ya estaba en Explorar.' : 'Negocio agregado a Explorar en Mi espacio.');
+  } catch (e) {
+    history.replaceState(null, '', '#/explore');
+    currentHash = '#/explore';
+    render();
+    toast(`No se pudo importar: ${e.message}`, { error: true });
+  }
+  return true;
 }
 async function updateApp() {
   toast('Buscando la versión más reciente…');
@@ -558,6 +580,7 @@ document.addEventListener('keydown', e => {
   }
 });
 window.addEventListener('hashchange', () => {
+  if (handleImport()) return;
   if (mainDirty && !confirm('Hay cambios sin guardar. ¿Quieres salir de esta pantalla?')) {
     history.replaceState(null, '', currentHash);
     return;
@@ -588,7 +611,7 @@ window.addEventListener('storage', e => {
 try {
   store = createStore(localStorage);
   store.subscribe(() => render());
-  render();
+  if (!handleImport()) render();
   hideSplash();
   loadRadar(() => render({ preserve: true }));
   let swReg = null;
